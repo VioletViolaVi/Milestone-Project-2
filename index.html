@@ -5,92 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>ESL Kids</title>
+    <title>Sadie's Zoo</title>
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <!-- jQuery CDN link-->
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="title">
-      <h1>ESL Kids</h1>
-      <p>Learning English is fun</p>
+    <div class="title-farm">
+      <h1>Sadie's Zoo</h1>
+      <p>Help Sadie find her animals!</p>
     </div>
+
     <div class="flex-container">
-      <p class="score">Score: 500</p>
-      <p class="timer">Timer: 00:00</p>
+      <div class="timer">Timer: 00:00</div>
     </div>
-    <h1>Start</h1>
-    <h1>Game Over!</h1>
+
+    <h1 id="title-start">Start</h1>
+    <h1 id="title-completed">Completed!</h1>
+    <h1 id="title-restart">Restart</h1>
+
+<!-- images taken from clipart library and free svg -->
+    <section class="matching-game">
+        <div class="flex-container">
+
+<!-- first set -->
+            <div class="whole-card">
+                <img class="front" src="img/bunny.png" alt="A cartoon picture of a bunny.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+ 
+            <div class="whole-card">
+                <img class="front" src="img/cow.png" alt="A cartoon picture of a cow.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/elephant.png" alt="A cartoon picture of an elephant."> 
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/giraffe.png" alt="A cartoon picture of a giraffe.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/hippo.png" alt="A cartoon picture of a hippo.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/leopard.png" alt="A cartoon picture of a leopard.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/lion.png" alt="A cartoon picture of a lion.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/mallard.png" alt="A cartoon picture of a mallard.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>        
+
+            <div class="whole-card">
+                <img class="front" src="img/monkey.png" alt="A cartoon picture of a monkey.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>   
+
+            <div class="whole-card">
+                <img class="front" src="img/owl.png" alt="A cartoon picture of an owl.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/panda.png" alt="A cartoon picture of a panda.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/peafowl.png" alt="A cartoon picture of a peafowl.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/penguin.png" alt="A cartoon picture of a penguin.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+        
+            <div class="whole-card">
+                <img class="front" src="img/pig.png" alt="A cartoon picture of a pig.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/polar bear.png" alt="A cartoon picture of a polar bear.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/reindeer.png" alt="A cartoon picture of a reindeer.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/rhino.png" alt="A cartoon picture of a rhino.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/sheep.png" alt="A cartoon picture of a sheep.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>     
+
+            <div class="whole-card">
+                <img class="front" src="img/tiger.png" alt="A cartoon picture of a tiger.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>             
+      
+
+<!-- second set -->
+            <div class="whole-card">
+                <img class="front" src="img/bunny.png" alt="A cartoon picture of a bunny.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
     
-    <div class="flex-container">
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-      <p class="back-card card">?</p>
-    </div>
+            <div class="whole-card">
+                <img class="front" src="img/cow.png" alt="A cartoon picture of a cow.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
 
-    <!-- images taken from clipart library and free svg -->
-    <!-- <div class="flex-container">
-        <img class="card" src="img/bunny.png" alt="A cartoon picture of a bunny."> 
-        <img class="card" src="img/cow.png" alt="A cartoon picture of a cow.">   
-        <img class="card" src="img/elephant.png" alt="A cartoon picture of an elephant.">    
-        <img class="card" src="img/giraffe.png" alt="A cartoon picture of a giraffe.">
-        <img class="card" src="img/hippo.png" alt="A cartoon picture of a hippo.">
-        <img class="card" src="img/leopard.png" alt="A cartoon picture of a leopard.">
-        <img class="card" src="img/lion.png" alt="A cartoon picture of a lion.">
-        <img class="card" src="img/mallard.png" alt="A cartoon picture of a mallard.">
-        <img class="card" src="img/monkey.png" alt="A cartoon picture of a monkey.">
-        <img class="card" src="img/owl.png" alt="A cartoon picture of an owl.">
-        <img class="card" src="img/panda.png" alt="A cartoon picture of a panda.">
-        <img class="card" src="img/peafowl.png" alt="A cartoon picture of a peafowl.">
-        <img class="card" src="img/penguin.png" alt="A cartoon picture of a penguin.">
-        <img class="card" src="img/pig.png" alt="A cartoon picture of a pig.">
-        <img class="card" src="img/polar bear.png" alt="A cartoon picture of a polar bear.">
-        <img class="card" src="img/reindeer.png" alt="A cartoon picture of a reindeer.">
-        <img class="card" src="img/rhino.png" alt="A cartoon picture of a rhino.">
-        <img class="card" src="img/sheep.png" alt="A cartoon picture of a sheep.">
-        <img class="card" src="img/tiger.png" alt="A cartoon picture of a tiger.">
-        <img class="card" src="img/zebra.png" alt="A cartoon picture of a zebra.">
-    </div> -->
+            <div class="whole-card">
+                <img class="front" src="img/elephant.png" alt="A cartoon picture of an elephant."> 
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
 
-    <!-- <div class="flex-container">
-    <img class="card" src="img/bunny.png" alt="A cartoon picture of a bunny."> 
-    <img class="card" src="img/cow.png" alt="A cartoon picture of a cow.">   
-    <img class="card" src="img/elephant.png" alt="A cartoon picture of an elephant.">    
-    <img class="card" src="img/giraffe.png" alt="A cartoon picture of a giraffe.">
-    <img class="card" src="img/hippo.png" alt="A cartoon picture of a hippo.">
-    <img class="card" src="img/leopard.png" alt="A cartoon picture of a leopard.">
-    <img class="card" src="img/lion.png" alt="A cartoon picture of a lion.">
-    <img class="card" src="img/mallard.png" alt="A cartoon picture of a mallard.">
-    <img class="card" src="img/monkey.png" alt="A cartoon picture of a monkey.">
-    <img class="card" src="img/owl.png" alt="A cartoon picture of an owl.">
-    <img class="card" src="img/panda.png" alt="A cartoon picture of a panda.">
-    <img class="card" src="img/peafowl.png" alt="A cartoon picture of a peafowl.">
-    <img class="card" src="img/penguin.png" alt="A cartoon picture of a penguin.">
-    <img class="card" src="img/pig.png" alt="A cartoon picture of a pig.">
-    <img class="card" src="img/polar bear.png" alt="A cartoon picture of a polar bear.">
-    <img class="card" src="img/reindeer.png" alt="A cartoon picture of a reindeer.">
-    <img class="card" src="img/rhino.png" alt="A cartoon picture of a rhino.">
-    <img class="card" src="img/sheep.png" alt="A cartoon picture of a sheep.">
-    <img class="card" src="img/tiger.png" alt="A cartoon picture of a tiger.">
-    <img class="card" src="img/zebra.png" alt="A cartoon picture of a zebra.">
-    </div> -->
+            <div class="whole-card">
+                <img class="front" src="img/giraffe.png" alt="A cartoon picture of a giraffe.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/hippo.png" alt="A cartoon picture of a hippo.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/leopard.png" alt="A cartoon picture of a leopard.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/lion.png" alt="A cartoon picture of a lion.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+            <div class="whole-card">
+                <img class="front" src="img/mallard.png" alt="A cartoon picture of a mallard.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>        
+
+            <div class="whole-card">
+                <img class="front" src="img/monkey.png" alt="A cartoon picture of a monkey.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>   
+
+            <div class="whole-card">
+                <img class="front" src="img/owl.png" alt="A cartoon picture of an owl.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/panda.png" alt="A cartoon picture of a panda.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/peafowl.png" alt="A cartoon picture of a peafowl.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/penguin.png" alt="A cartoon picture of a penguin.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+        
+            <div class="whole-card">
+                <img class="front" src="img/pig.png" alt="A cartoon picture of a pig.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/polar bear.png" alt="A cartoon picture of a polar bear.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/reindeer.png" alt="A cartoon picture of a reindeer.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/rhino.png" alt="A cartoon picture of a rhino.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div> 
+
+            <div class="whole-card">
+                <img class="front" src="img/sheep.png" alt="A cartoon picture of a sheep.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>     
+
+            <div class="whole-card">
+                <img class="front" src="img/tiger.png" alt="A cartoon picture of a tiger.">
+                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
+            </div>
+
+        </div>
+    </section>  
 
     <script src="js/scripts.js"></script>
 </body>

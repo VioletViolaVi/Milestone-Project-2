@@ -3,46 +3,85 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 0px;
     margin: 0px;
-    background-color: violet;
     text-align: center;
+    box-sizing: border-box;
+    color: brown;
+}
+
+/********************** prevents imgs from having the same bg-colour */
+body{    
+    background: limegreen;
+    height: 100%;
 }
 
 /********************** main heading */
-.title{
+.title-farm{
     font-size: 7vw;
 }
 
-/********************** sub headings */
-.score,.timer{
+/********************** styles timer */
+.timer{
     margin-top: 20px;
     font-size: 6vw;
 }
 
-/********************** spaces out score and timer */
-.score{
-    margin-right: 130px;
+/*------------------------------------------------------------------------- CARD GAME -------------------------------------------------------------------------*/
+
+/********************** to delete at the end -maybe not the last one*/
+section.matching-game{
+    border: red 2px solid;
+    /* perspective: 1000px; */  /* -bit much tho. */
 }
 
 /********************** grid system for cards and sub headings */
 .flex-container{
+    border: blue 2px solid;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-/********************** styles animal side of cards */
-.card{
-    background-color: purple;
+/********************** to delete at the end */
+.whole-card{
+    border: orange 2px solid;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.6s;
+}
+
+/********************** styles front and back side of cards */
+.front, .back{    
+    border: 3px solid palevioletred;
+    background-color: yellow;
     height: 200px;
     width: 130px;
     border-radius: 5px;
-    border: 3px solid palevioletred;
     padding: 10px 5px;
     margin: 5px;
+    backface-visibility: hidden;
 }
 
-/********************** styles back of cards */
-.back-card{
-    font-size: 200px;
+/********************** puts back of card in one place */
+.back{
+    position: relative; 
+}
+
+/********************** puts front of card on top of back of card */
+.front{
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+/********************** styles animal and question mark images */
+img{
+    height: 200px;
+    width: 130px;  
+}
+
+/*------------------------------------------------------------------------- JAVASCRIPT/JQUERY -------------------------------------------------------------------------*/
+
+/********************** to flip cards back and forth */
+.flip{
+    transform: rotateY(180deg)
 }

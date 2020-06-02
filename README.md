@@ -18,3 +18,4 @@ http://clipart-library.com/clipart/dT9breaT7.htm - rhino img
 http://clipart-library.com/clipart/6iropayiK.htm - sheep img
 http://clipart-library.com/clipart/ziXeXpxXT.htm - tiger img
 http://clipart-library.com/clipart/8cEjyrkKi.htm - zebra img
+https://freesvg.org/vector-image-of-primary-question-mark-black-and-white-icon - question mark img

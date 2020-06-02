@@ -1,2 +1,6 @@
-console.log("hi");
-$(console.log("sup"));
+$("document").ready(function(){ 
+    $(".whole-card").click(function(){
+        $(this).toggleClass("flip");
+    });
+});
+
