@@ -3,4 +3,3 @@ $("document").ready(function(){
         $(this).toggleClass("flip");
     });
 });
-

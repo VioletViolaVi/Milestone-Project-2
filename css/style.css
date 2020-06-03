@@ -5,12 +5,10 @@
     margin: 0px;
     text-align: center;
     box-sizing: border-box;
-    color: brown;
 }
 
 /********************** prevents imgs from having the same bg-colour */
 body{    
-    background: limegreen;
     height: 100%;
 }
 
@@ -25,7 +23,7 @@ body{
     font-size: 6vw;
 }
 
-/*------------------------------------------------------------------------- CARD GAME -------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
 
 /********************** to delete at the end -maybe not the last one*/
 section.matching-game{
@@ -42,10 +40,10 @@ section.matching-game{
     align-items: center;
 }
 
-/********************** to delete at the end */
+/********************** flips whole card */
 .whole-card{
     border: orange 2px solid;
-    position: relative;
+    /* position: relative; */
     transform-style: preserve-3d;
     transition: 0.6s;
 }
@@ -54,8 +52,8 @@ section.matching-game{
 .front, .back{    
     border: 3px solid palevioletred;
     background-color: yellow;
-    height: 200px;
-    width: 130px;
+    height: 60px;
+    width: 50px;
     border-radius: 5px;
     padding: 10px 5px;
     margin: 5px;
@@ -74,10 +72,10 @@ section.matching-game{
 }
 
 /********************** styles animal and question mark images */
-img{
+/* img{
     height: 200px;
     width: 130px;  
-}
+} */
 
 /*------------------------------------------------------------------------- JAVASCRIPT/JQUERY -------------------------------------------------------------------------*/
 
