@@ -19,3 +19,4 @@ http://clipart-library.com/clipart/6iropayiK.htm - sheep img
 http://clipart-library.com/clipart/ziXeXpxXT.htm - tiger img
 http://clipart-library.com/clipart/8cEjyrkKi.htm - zebra img
 https://freesvg.org/vector-image-of-primary-question-mark-black-and-white-icon - question mark img
+https://icons8.com/icons/set/reset - reset img
