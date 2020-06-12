@@ -108,18 +108,15 @@ In order to locally run this code, this project would have to be cloned from Git
 4) Afterwards, enter into the local IDE and open Git Bash.
 5) Then, change the current working directory into the location of where the cloned directory is to be made.
 6) Next, type in “git clone” and paste in the URL that was copied earlier from the “Clone with HTTPS” section i.e.: 
-   - _git clone: https://github.com/VioletViolaVi/Milestone-Project-2.git
+   - git clone: https://github.com/VioletViolaVi/Milestone-Project-2.git
 7) Lastly, tap the enter button on the keyboard to create the local clone.
 
 
 # Credits
-
 ### Content
 - The responsive breakpoints used were recommended by Bootstrap.
-
 ### Media
 - The images used on this website were taken from Free SVG and Clipart-Library.
-
 ### Acknowledgements
 - I received inspiration for this project from the BrandedBrothers card matching game.
   - www.brandedbrothers.com

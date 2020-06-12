@@ -1,3 +1,4 @@
+// waits until DOM has been fully loaded
 $("document").ready(function () {
   // removes start button when clicked
   $("#title-start").click(function () {
@@ -8,6 +9,69 @@ $("document").ready(function () {
   $(".whole-card").click(function () {
     $(this).toggleClass("flip");
   });
+
+
+// using the images in array to shuffle
+        //   let animalImages = [
+        //     "img/elephant.png",
+        //     "img/giraffe.png",
+        //     "img/mallard.png",
+        //     "img/owl.png",
+        //     "img/peafowl.png",
+        //     "img/zebra.png",
+        //     "img/elephant.png",
+        //     "img/giraffe.png",
+        //     "img/mallard.png",
+        //     "img/owl.png",
+        //     "img/peafowl.png",
+        //     "img/zebra.png",
+        //   ];
+
+
+
+  //node.list of cards
+        let animals = document.getElementsByClassName("whole-card");
+  // converts node.list to array
+        let animalImages = Array.from(animals);
+
+  // Fisher-Yates shuffle method
+  function shufflingCards() {
+
+    // declaring the card position picked at random
+    let randomlyPickedCard;
+
+    // declaring the card position picked started from the back going backwards
+    let decrementallyPickedCard;
+
+    // last item in the array; swaps with items in position numbers greater than zero; going backwards in the array
+    for (i=animalImages.length-1; i>0; i--) {
+      let randomlyPickedCard = Math.floor(Math.random() * 12);
+      let decrementingCard = animalImages[i];
+      animalImages[i] = animalImages[randomlyPickedCard];
+      animalImages[randomlyPickedCard] = decrementingCard;
+    }
+    return animalImages;
+  };
+
+ // to check delete later
+  console.log(shufflingCards(animalImages));
+
+
+
+
+
+
+
+
+
+  //PRACTICE/TRIAL&ERROR  =  DELETE LATER
+  //   function shuffle() {
+  //     for (i = 0; i < animals.length; i++) {
+  //       let randomlyMovedCards = Math.floor(Math.random() * 12);
+  //       animals.style.order = randomlyMovedCards;
+  //     }
+  //   }
+  //   console.log(shuffle());
 
   //   function num(fig) {
   //     return fig - 5;
@@ -166,4 +230,20 @@ $("document").ready(function () {
   // for(i=0; i<tray.length; i++){
   //     full += tray[i];
   // }console.log(full);
+
+  // var magic = function(){
+  //     return new Date;
+  // }
+  // console.log(magic);
+
+  // var magic= () => {
+  //     return new Date;
+  // }
+  // console.log(magic);
+
+  // var magic = () => new Date;
+  // console.log(magic);
+
+  // () => new Date;
+  // console.log();
 });
