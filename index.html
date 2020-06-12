@@ -13,9 +13,11 @@
 </head>
 <body>
 
+
     <div>
         <h1 id="title-zoo">Sadie's Zoo</h1>
     </div>
+
 
     <div>
         <br>
@@ -23,12 +25,13 @@
         <br>
     </div>
 
+
 <!-- images taken from clipart library and free svg -->
     <section class="matching-game">
         <div class="cards-container">
 
 <!-- first set -->
-            <div class="whole-card">
+            <div class="whole-card elephant">
                 <img class="front" src="img/elephant.png" alt="A cartoon picture of an elephant."> 
                 <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
             </div>
@@ -59,7 +62,7 @@
             </div> 
 
  <!-- second set -->
-            <div class="whole-card">
+            <div class="whole-card elephant">
                 <img class="front" src="img/elephant.png" alt="A cartoon picture of an elephant."> 
                 <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
             </div>
@@ -89,14 +92,23 @@
                 <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
             </div> 
 
+            <div>
+                <button type="button" id="title-start">Start!</button>
+            </div>
+
         </div>
     </section>  
     
-    <h1 id="title-start">Start</h1>
-    <h1 id="title-completed">Completed!</h1>
-    <h2 id="title-time">Time</h2>
-    <h2 id="title-restart">Restart</h2>
+    
+    <div>
+        <h1 id="title-completed">Completed!</h1>
+        <h2 id="title-time">Time: </h2>
+        <button type="button" id="title-restart">Restart</button>
+    </div>
+
 
     <script src="js/scripts.js"></script>
+
+    
 </body>
 </html>

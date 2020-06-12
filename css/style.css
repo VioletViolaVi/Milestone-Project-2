@@ -1,6 +1,6 @@
 /********************** sets custom default for all elements */
 * {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   padding: 0px;
   margin: 0px;
   text-align: center;
@@ -10,13 +10,36 @@
 /********************** prevents imgs from having the same bg-colour */
 body {
   height: 100%;
-  background: lightblue;
+  background: rgba(173, 216, 230, 0.733);
 }
 
-/********************** styles start and complete titles */
+/*------------------------------------------------------------------------- TITLES/BUTTONS -------------------------------------------------------------------------*/
+
+/********************** puts start button in front and centre */
+div #title-start,
+#title-start {
+  position: absolute;
+}
+
+/********************** styles start button and completed title */
 #title-start,
 #title-completed {
   font-size: 15vw;
+}
+
+/********************** styles start and reset buttons */
+div #title-start,
+#title-start, #title-restart {
+  background-color: lightblue;
+  border-radius: 10px;
+  top: 40%;
+  width: 50%;
+  left: 25%;
+}
+
+/********************** prevents border on start and reset buttons appearing when clicked */
+button#title-start:focus, button#title-restart:focus {
+  outline: rgb(173, 188, 230);
 }
 
 /********************** styles main heading */
@@ -45,6 +68,7 @@ section.matching-game {
   grid-template-columns: auto auto auto;
   grid-gap: 2px;
   justify-content: center;
+  align-content: center;
 }
 
 /********************** flips whole card */
@@ -62,7 +86,7 @@ section.matching-game {
   width: 95px;
   border-radius: 5px;
   padding: 10px 5px;
-  margin: 5px;
+  margin: 1px;
   backface-visibility: hidden;
 }
 
@@ -83,8 +107,15 @@ img {
   width: 80%;
 }
 
+/*------------------------------------------------------------------------- JAVASCRIPT/JQUERY -------------------------------------------------------------------------*/
+
+/********************** to flip cards back and forth */
+.flip {
+  transform: rotateY(180deg);
+}
+
 /*------------------------------------------------------------------------- MEDIA QUERIES -------------------------------------------------------------------------*/
-/* Breakpoints taken from Bootstrap */
+/* Recommended breakpoints from Bootstrap */
 
 /* small */
 @media (min-width: 576px) {
@@ -104,6 +135,11 @@ img {
 
 /* medium */
 @media (min-width: 768px) {
+  /********************** keeps start button at centre */
+  div #title-start {
+    top: 36%;
+  }
+
   /********************** styles front and back side of cards */
   .front,
   .back {
@@ -114,6 +150,11 @@ img {
 
 /* large */
 @media (min-width: 992px) {
+  /********************** keeps start button at centre */
+  div #title-start {
+    top: 32%;
+  }
+
   /********************** styles front and back side of cards */
   .front,
   .back {
@@ -124,6 +165,15 @@ img {
 
 /* extra large */
 @media (min-width: 1200px) {
+  /********************** keeps start button at centre */
+  div #title-start {
+    top: 37%;
+  }
+  /********************** reduces sixe of restart button */
+  #title-restart{
+      width: 25%;
+  }
+
   /********************** styles main heading*/
   #title-zoo,
   #title-start,
@@ -144,10 +194,3 @@ img {
     width: 230px;
   }
 } /* extra large end */
-
-/*------------------------------------------------------------------------- JAVASCRIPT/JQUERY -------------------------------------------------------------------------*/
-
-/********************** to flip cards back and forth */
-.flip {
-  transform: rotateY(180deg);
-}
