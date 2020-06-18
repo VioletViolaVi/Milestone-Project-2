@@ -16,20 +16,20 @@ body {
 /*------------------------------------------------------------------------- TITLES/BUTTONS -------------------------------------------------------------------------*/
 
 /********************** puts start button in front and centre */
-div #title-start,
-#title-start {
+div #titleStart,
+#titleStart {
   position: absolute;
 }
 
 /********************** styles start button and completed title */
-#title-start,
-#title-completed {
+#titleStart,
+#titleCompleted {
   font-size: 15vw;
 }
 
 /********************** styles start and reset buttons */
-div #title-start,
-#title-start, #title-restart {
+div #titleStart,
+#titleStart, #titleRestart {
   background-color: lightblue;
   border-radius: 10px;
   top: 40%;
@@ -38,7 +38,7 @@ div #title-start,
 }
 
 /********************** prevents border on start and reset buttons appearing when clicked */
-button#title-start:focus, button#title-restart:focus {
+button#titleStart:focus, button#titleRestart:focus {
   outline: rgb(173, 188, 230);
 }
 
@@ -50,20 +50,20 @@ button#title-start:focus, button#title-restart:focus {
 
 /********************** styles timer, time and restart titles */
 #timer,
-#title-time,
-#title-restart {
+#titleTime,
+#titleRestart {
   font-size: 10vw;
 }
 
 /*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
 
 /********************** adds to the style of the flip*/
-section.matching-game {
+section.decorativeFlip {
   perspective: 1000px;
 }
 
 /********************** grid system for cards and sub headings */
-.cards-container {
+.cardsContainer {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 2px;
@@ -72,7 +72,7 @@ section.matching-game {
 }
 
 /********************** flips whole card */
-.whole-card {
+.wholeCard {
   transform-style: preserve-3d;
   transition: 0.6s;
 }
@@ -114,13 +114,18 @@ img {
   transform: rotateY(180deg);
 }
 
+/********************** to remove matching cards */
+.hide {
+  visibility: hidden;
+}
+
 /*------------------------------------------------------------------------- MEDIA QUERIES -------------------------------------------------------------------------*/
 /* Recommended breakpoints from Bootstrap */
 
 /* small */
 @media (min-width: 576px) {
   /********************** grid system for cards */
-  .cards-container {
+  .cardsContainer {
     grid-template-columns: auto auto auto auto;
     grid-gap: 5px;
   }
@@ -136,7 +141,7 @@ img {
 /* medium */
 @media (min-width: 768px) {
   /********************** keeps start button at centre */
-  div #title-start {
+  div #titleStart {
     top: 36%;
   }
 
@@ -151,7 +156,7 @@ img {
 /* large */
 @media (min-width: 992px) {
   /********************** keeps start button at centre */
-  div #title-start {
+  div #titleStart {
     top: 32%;
   }
 
@@ -166,25 +171,25 @@ img {
 /* extra large */
 @media (min-width: 1200px) {
   /********************** keeps start button at centre */
-  div #title-start {
+  div #titleStart {
     top: 37%;
   }
   /********************** reduces sixe of restart button */
-  #title-restart{
+  #titleRestart{
       width: 25%;
   }
 
   /********************** styles main heading*/
   #title-zoo,
-  #title-start,
-  #title-completed {
+  #titleStart,
+  #titleCompleted{
     font-size: 9vw;
   }
 
   /********************** styles timer */
   #timer,
-  #title-time,
-  #title-restart {
+  #titleTime,
+  #titleRestart {
     font-size: 5vw;
   }
 
