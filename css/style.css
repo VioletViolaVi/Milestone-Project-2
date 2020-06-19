@@ -20,30 +20,15 @@ body {
   font-size: 15vw;
 }
 
-/********************** styles reset button */
-#titleRestart {
-  background-color: lightblue;
-  border-radius: 10px;
-  top: 40%;
-  width: 50%;
-  left: 25%;
-}
-
-/********************** prevents border reset button appearing when clicked */
-button#titleRestart:focus {
-  outline: rgb(173, 188, 230);
-}
-
 /********************** styles main heading */
 #title-zoo {
   margin-top: 5px;
   font-size: 15vw;
 }
 
-/********************** styles timer, time and restart titles */
+/********************** styles timer and time titles */
 #timer,
-#titleTime,
-#titleRestart {
+#titleTime{
   font-size: 10vw;
 }
 
@@ -179,10 +164,6 @@ img {
 
 /* extra large */
 @media (min-width: 1200px) {
-  /********************** reduces sixe of restart button */
-  #titleRestart {
-    width: 25%;
-  }
 
   /********************** styles main heading and completed title*/
   #title-zoo,
@@ -190,10 +171,9 @@ img {
     font-size: 9vw;
   }
 
-  /********************** styles timer */
+  /********************** styles timer and time */
   #timer,
-  #titleTime,
-  #titleRestart {
+  #titleTime{
     font-size: 5vw;
   }
 

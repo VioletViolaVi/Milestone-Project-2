@@ -61,6 +61,8 @@ This project is about creating a card matching game using cartoon pictures of zo
 - The project used Clipart-Library to provide free to use images for the animals.
 ### Snipping Tool
 - The project used Snipping Tool to edit out the wireframes for this project.
+### Font Awesome
+- The project used Font Awesome to provide the restart icon that would be used to restart the game.
 ### Google Fonts
 - The project used Google Font to provide the font style used for this project.
 
@@ -83,6 +85,9 @@ The following links, from the third party websites, were used to create this pro
   * http://clipart-library.com/clipart/p6iyk8bcn.htm
 - Zebra
   * http://clipart-library.com/clipart/8cEjyrkKi.htm
+### Font Awesome
+- Restart icon
+   * https://fontawesome.com/icons/redo-alt?style=solid 
 ### Google Fonts
 - https://fonts.google.com/specimen/Heebo?query=heebo&selection.family=Heebo
 ### jQuery
