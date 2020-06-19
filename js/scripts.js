@@ -1,8 +1,9 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
-  // removes start button when clicked
-  $("#titleStart").click(function () {
-    $(this).hide();
+
+  // removes start button and modal background when clicked
+  $("#start").click(function () {
+    $(".modalBackground").hide();
   });
 
   // flips cards when clicked
@@ -10,12 +11,9 @@ $("document").ready(function () {
     $(this).toggleClass("flip");
   });
 
-  // prints out name of clicked animal card
-  $(".wholeCard").click(function () {
-    console.log($(this).data("image"));
-  });
+  /********************** do cards match or not? */
 
-  // do cards match or not?
+  //adds "clicked" class to cards when clicked
   $(".wholeCard").click(function () {
     $(this).addClass("clicked");
     // picking two cards
@@ -25,8 +23,8 @@ $("document").ready(function () {
         $(".clicked").first().data("image") ===
         $(".clicked").last().data("image")
       ) {
-        // removes matched cards by hiding them
-        $(".clicked").addClass("hide").removeClass("clicked");;
+        // hides matched cards whilst keeping them in place and removes clicked class so "length === 2" continues to work
+        $(".clicked").addClass("hide").removeClass("clicked");
       } else {
         // flips back non matching cards
         toFlipBackUnmatchedCards();
@@ -38,7 +36,7 @@ $("document").ready(function () {
 
   /********************** called out functions in "do cards match or not?" */
 
-  // function & flips back non matching cards
+  // cards flip back on their own after a set time
   function toFlipBackUnmatchedCards() {
     setTimeout(function () {
       $(".flip").toggleClass("flip");
@@ -46,6 +44,13 @@ $("document").ready(function () {
   }
 
 
+  //brings back modal after game is won
+  function endGame() {
+      if($(".hide".length) === 12){
+         console.log("THE GAME IS OVER!"); 
+      };
+  };
+  endGame()
 
 
 
@@ -60,6 +65,27 @@ $("document").ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //   // prints out name of clicked animal card
+  //   $(".wholeCard").click(function () {
+  //     console.log($(this).data("image"));
+  //   });
 
 
 
@@ -70,16 +96,14 @@ $("document").ready(function () {
   //      });          removeClickingOnCards();
   //  };
 
+
+
   //  // brings back clicking ability after two picked out cards dissapper or flip back
   //  function restoreClickingOnCards() {
   //      $(".wholeCard").click(function(){
   //          $(this).on("click");
   //      });             restoreClickingOnCards();
   //  };
-
-
-
-
 
 
 

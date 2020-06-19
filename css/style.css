@@ -15,21 +15,13 @@ body {
 
 /*------------------------------------------------------------------------- TITLES/BUTTONS -------------------------------------------------------------------------*/
 
-/********************** puts start button in front and centre */
-div #titleStart,
-#titleStart {
-  position: absolute;
-}
-
-/********************** styles start button and completed title */
-#titleStart,
+/********************** styles the completed title */
 #titleCompleted {
   font-size: 15vw;
 }
 
-/********************** styles start and reset buttons */
-div #titleStart,
-#titleStart, #titleRestart {
+/********************** styles reset button */
+#titleRestart {
   background-color: lightblue;
   border-radius: 10px;
   top: 40%;
@@ -37,8 +29,8 @@ div #titleStart,
   left: 25%;
 }
 
-/********************** prevents border on start and reset buttons appearing when clicked */
-button#titleStart:focus, button#titleRestart:focus {
+/********************** prevents border reset button appearing when clicked */
+button#titleRestart:focus {
   outline: rgb(173, 188, 230);
 }
 
@@ -53,6 +45,33 @@ button#titleStart:focus, button#titleRestart:focus {
 #titleTime,
 #titleRestart {
   font-size: 10vw;
+}
+
+/*------------------------------------------------------------------------- MODALS -------------------------------------------------------------------------*/
+
+/********************** provides underlay for modals */
+.modalBackground {
+  background-color: rgba(0, 0, 0, 0.63);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+/********************** styles the start button */
+#start {
+  width: 100%;
+  background-color: lightblue;
+  border: solid rgb(109, 192, 219) 3px;
+  text-align: center;
+  z-index: 2;
+  font-size: 20vw;
+  border-radius: 10px;
+  padding: 10px 5px;
 }
 
 /*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
@@ -140,11 +159,6 @@ img {
 
 /* medium */
 @media (min-width: 768px) {
-  /********************** keeps start button at centre */
-  div #titleStart {
-    top: 36%;
-  }
-
   /********************** styles front and back side of cards */
   .front,
   .back {
@@ -155,11 +169,6 @@ img {
 
 /* large */
 @media (min-width: 992px) {
-  /********************** keeps start button at centre */
-  div #titleStart {
-    top: 32%;
-  }
-
   /********************** styles front and back side of cards */
   .front,
   .back {
@@ -170,19 +179,14 @@ img {
 
 /* extra large */
 @media (min-width: 1200px) {
-  /********************** keeps start button at centre */
-  div #titleStart {
-    top: 37%;
-  }
   /********************** reduces sixe of restart button */
-  #titleRestart{
-      width: 25%;
+  #titleRestart {
+    width: 25%;
   }
 
-  /********************** styles main heading*/
+  /********************** styles main heading and completed title*/
   #title-zoo,
-  #titleStart,
-  #titleCompleted{
+  #titleCompleted {
     font-size: 9vw;
   }
 
