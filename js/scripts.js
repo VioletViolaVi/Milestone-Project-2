@@ -1,6 +1,6 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
-
+  
   // removes start button and modal background when clicked
   $("#start").click(function () {
     $(".modalBackground").hide();
@@ -11,8 +11,7 @@ $("document").ready(function () {
     $(this).toggleClass("flip");
   });
 
-  /********************** do cards match or not? */
-
+  /********************** do cards match or not?: checks to see if cards match ***********************/
   //adds "clicked" class to cards when clicked
   $(".wholeCard").click(function () {
     $(this).addClass("clicked");
@@ -34,8 +33,7 @@ $("document").ready(function () {
     }
   });
 
-  /********************** called out functions in "do cards match or not?" */
-
+  /********************** functions to be called out in "do cards match or not?"section */
   // cards flip back on their own after a set time
   function toFlipBackUnmatchedCards() {
     setTimeout(function () {
@@ -43,21 +41,27 @@ $("document").ready(function () {
     }, 1000);
   }
 
-
-  //brings back modal after game is won
+  /********************** are all cards matched?: produces end game modal ***********************/
+  //shows endgame model once game is won
   function endGame() {
-      if($(".hide".length) === 12){
-         console.log("THE GAME IS OVER!"); 
-      };
+      if($(".hide").length === 12){
+          // displays endgame modal
+          gameCompleted();
+          console.log("the game is completed!"); 
+        };
+    };
+   console.log(endGame());
+    
+  /********************** functions to be called out in "are all cards matched?" section */  
+  // prints out HTML of end game modal
+  function gameCompleted() {
+      let endGameModal= $(".modalBackground").append(`
+        <div class="endgameBackground">
+            <h1 id="completed">Completed!</h1>
+            <h2 id="time">Time: </h2>
+            <i class="fas fa-redo-alt"></i>
+        </div>`);
   };
-  endGame()
-
-
-
-
-
-
-
 
 
 

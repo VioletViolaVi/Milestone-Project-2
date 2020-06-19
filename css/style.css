@@ -13,12 +13,7 @@ body {
   background: rgba(173, 216, 230, 0.733);
 }
 
-/*------------------------------------------------------------------------- TITLES/BUTTONS -------------------------------------------------------------------------*/
-
-/********************** styles the completed title */
-#titleCompleted {
-  font-size: 15vw;
-}
+/*------------------------------------------------------------------------- TITLES -------------------------------------------------------------------------*/
 
 /********************** styles main heading */
 #title-zoo {
@@ -26,9 +21,8 @@ body {
   font-size: 15vw;
 }
 
-/********************** styles timer and time titles */
-#timer,
-#titleTime{
+/********************** styles timer titles */
+#timer {
   font-size: 10vw;
 }
 
@@ -47,16 +41,24 @@ body {
   z-index: 1;
 }
 
-/********************** styles the start button */
-#start {
+/********************** styles both the start button and endgame modal */
+#start,
+.endgameBackground {
   width: 100%;
-  background-color: lightblue;
-  border: solid rgb(109, 192, 219) 3px;
-  text-align: center;
-  z-index: 2;
-  font-size: 20vw;
-  border-radius: 10px;
   padding: 10px 5px;
+  border-radius: 10px;
+  background-color: lightblue;
+  border: 3px solid rgb(109, 192, 219);
+}
+
+/********************** styles the start modal */
+#start {
+  font-size: 20vw;
+}
+
+/********************** styles the endgame modal */
+.endgameBackground {
+  font-size: 5vw;
 }
 
 /*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
@@ -164,16 +166,13 @@ img {
 
 /* extra large */
 @media (min-width: 1200px) {
-
-  /********************** styles main heading and completed title*/
-  #title-zoo,
-  #titleCompleted {
+  /********************** styles main heading */
+  #title-zoo {
     font-size: 9vw;
   }
 
-  /********************** styles timer and time */
-  #timer,
-  #titleTime{
+  /********************** styles timer */
+  #timer {
     font-size: 5vw;
   }
 
