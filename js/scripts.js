@@ -1,6 +1,5 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
-  
   // removes start button and modal background when clicked
   $("#start").click(function () {
     $(".modalBackground").hide();
@@ -38,30 +37,27 @@ $("document").ready(function () {
   function toFlipBackUnmatchedCards() {
     setTimeout(function () {
       $(".flip").toggleClass("flip");
-    }, 1000);
+    }, 600);
   }
 
-  /********************** are all cards matched?: produces end game modal ***********************/
-  //shows endgame model once game is won
-  function endGame() {
-      if($(".hide").length === 12){
-          // displays endgame modal
-          gameCompleted();
-          console.log("the game is completed!"); 
-        };
-    };
-   console.log(endGame());
-    
-  /********************** functions to be called out in "are all cards matched?" section */  
-  // prints out HTML of end game modal
-  function gameCompleted() {
-      let endGameModal= $(".modalBackground").append(`
+  /********************** produces end game modal ***********************/
+  //shows endgame model once game is completed
+  function conditonToMakeEndGameModalAppear() {
+    $(".wholeCard").click(function () {
+      if ($(".hide").length === 12) {
+          setTimeout(function() {
+        $(".modalBackground").show();
+        $(".modalBackground #start").replaceWith(`
         <div class="endgameBackground">
             <h1 id="completed">Completed!</h1>
             <h2 id="time">Time: </h2>
             <i class="fas fa-redo-alt"></i>
-        </div>`);
+        </div>`);              
+          }, 600);
+      };
+    });
   };
+  conditonToMakeEndGameModalAppear();
 
 
 
@@ -85,13 +81,43 @@ $("document").ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  /********************** functions to be called out in "are all cards matched?" section */
+
+  // prints out HTML of end game modal
+
+//   function endGameModal() {
+//     let endGame = $(".modalBackground").append(`
+//         <div class="endgameBackground">
+//             <h1 id="completed">Completed!</h1>
+//             <h2 id="time">Time: </h2>
+//             <i class="fas fa-redo-alt"></i>
+//         </div>`);
+//   }
+
+
+
+  // setInterval(function(){
+  //     let countUpStart = 0;
+  //     ++Time;
+  //     document.getElementById("timer").innerHTML = "Timer: 00:001";
+  // },1000)
+  // console.log(setInterval);
 
   //   // prints out name of clicked animal card
   //   $(".wholeCard").click(function () {
   //     console.log($(this).data("image"));
   //   });
-
-
 
   //  // removes clicking ability after two picked out cards
   //  function removeClickingOnCards() {
@@ -100,16 +126,12 @@ $("document").ready(function () {
   //      });          removeClickingOnCards();
   //  };
 
-
-
   //  // brings back clicking ability after two picked out cards dissapper or flip back
   //  function restoreClickingOnCards() {
   //      $(".wholeCard").click(function(){
   //          $(this).on("click");
   //      });             restoreClickingOnCards();
   //  };
-
-
 
   //   //node.list of cards
   //   let animals = document.querySelectorAll(".wholeCard");
