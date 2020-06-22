@@ -41,9 +41,8 @@ body {
   z-index: 1;
 }
 
-/********************** styles both the start button and endgame modal */
-#start,
-.endgameBackground {
+/********************** styles both the start button modal */
+#start {
   width: 100%;
   padding: 10px 5px;
   border-radius: 10px;
@@ -56,19 +55,15 @@ body {
   font-size: 20vw;
 }
 
-/********************** styles the endgame modal */
-.endgameBackground {
-  font-size: 15vw;
+/********************** styles title for when game is finished */
+#completed {
+  margin-top: 100px;
+  font-size: 18vw;
+  margin-bottom: 15px;
 }
 
-/********************** styles contents inside closing modal */
-#completed{
-  font-size: 18vw;    
-}
-#time{
-  font-size: 17vw;
-}
-.fas.fa-redo-alt{
+/********************** styles reset button */
+.fas.fa-redo-alt {
   font-size: 15vw;
 }
 

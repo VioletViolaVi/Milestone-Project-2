@@ -1,7 +1,8 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
-  // removes start button and modal background when clicked
+  // removes start button and modal background when clicked and starts counter
   $("#start").click(function () {
+    CountUpTimer();
     $(".modalBackground").hide();
   });
 
@@ -10,7 +11,7 @@ $("document").ready(function () {
     $(this).toggleClass("flip");
   });
 
-  /********************** do cards match or not?: checks to see if cards match*/
+  /********************** checks if cards match*/
   // adds "clicked" class to cards when clicked
   $(".wholeCard").click(function () {
     $(this).addClass("clicked");
@@ -32,7 +33,7 @@ $("document").ready(function () {
     }
   });
 
-  /********************** functions to be called out in "do cards match or not?"section */
+  /********************** hides non matching pairs */
   // cards flip back on their own after a set time
   function toFlipBackUnmatchedCards() {
     setTimeout(function () {
@@ -40,45 +41,60 @@ $("document").ready(function () {
     }, 600);
   }
 
-  /********************** countup timer for the gameplay duration */
-  // times how long user plays the game
+  /********************** countup timer for gameplay */
+  // times how long user plays game
   function CountUpTimer() {
     // start time
     let timeDuration = 0;
     // ascending counting time
     let countingTime = setInterval(function () {
-      $("#timer").html(`Timer: ${timeDuration}`);
+      $("#timer").html(`Time: ${timeDuration}`);
       timeDuration += 1;
     }, 1000);
     // stops counting when all cards are matched
     $(".wholeCard").click(function () {
       if ($(".hide").length === 12) {
         clearInterval(countingTime);
-      };
+      }
     });
-  };
-  CountUpTimer();
+  }
 
   /********************** produces end game modal */
   // shows endgame model once game is completed
   function conditonToMakeEndGameModalAppear() {
     $(".wholeCard").click(function () {
       if ($(".hide").length === 12) {
+        // shows completed and restart sign
         setTimeout(function () {
-          $(".modalBackground").show();
-          $(".modalBackground #start").replaceWith(`
-        <div class="endgameBackground">
+          $("#score").replaceWith(`
+        <div id="endGame">
             <h1 id="completed">Completed!</h1>
-            <h2 id="time">Time: </h2>
             <i class="fas fa-redo-alt"></i>
         </div>`);
-        $("#time").html(`${timeDuration}`);
+          // allows game to restart when its button is clicked
+          restartGame();
+          // prevents animal images being seen when restarted
+          $(".wholeCard").removeClass("flip");
         }, 600);
-      };
+      }
     });
-  };
+  }
   conditonToMakeEndGameModalAppear();
 
+  /********************** restarts game */
+  // used instead of refreshing the page
+  function restartGame() {
+    // makes restart button clickable and reset game
+    $(".fas.fa-redo-alt").click(function () {
+      // ensures restart symbol is always shown after game play
+      $("#endGame").replaceWith(`
+        <div id="score"></div>`);
+      // makes cards re-appear once restarted
+      $(".wholeCard").removeClass("hide");
+      // starts timer from beginning again
+      clearInterval(CountUpTimer());
+    });
+  }
 
 
 
@@ -98,50 +114,7 @@ $("document").ready(function () {
 
 
 
-
-
-
-
-
-
-  //  function durationOfTheUserPlayingTheGame() {
-  //       let liveDate = new Date();
-  //       let minutes = liveDate.getMinutes();
-  //       let seconds = liveDate.getSeconds();
-
-  //       setInterval(function() {
-  //       $("#start").click(function(){
-  //         $("#timer").text(`Timer: ${minutes}:${seconds}`);
-  //       }, 1000);
-  //       });
-  //   };
-  //   durationOfTheUserPlayingTheGame();
-
-  //   let minutesAndSeconds = `${minutes}:${seconds}`;
-
-  //     let ascendingTime = 0;
-  //     setInterval(function () {
-  //         ascendingTime ++;
-  //         if(ascendingTime>0){
-  //             $("#timer").innerHTML = ascendingTime;
-  //         }
-  //     }, 1000)
-  //   };
-  //   countUp();
-  //   console.log(countUp());
-
-  // setInterval(function(){
-  //     let countUpStart = 0;
-  //     ++Time;
-  //     document.getElementById("timer").innerHTML = "Timer: 00:001";
-  // },1000)
-  // console.log(setInterval);
-
-  //   // prints out name of clicked animal card
-  //   $(".wholeCard").click(function () {
-  //     console.log($(this).data("image"));
-  //   });
-
+  
   //  // removes clicking ability after two picked out cards
   //  function removeClickingOnCards() {
   //      $(".wholeCard").click(function(){
