@@ -58,7 +58,18 @@ body {
 
 /********************** styles the endgame modal */
 .endgameBackground {
-  font-size: 5vw;
+  font-size: 15vw;
+}
+
+/********************** styles contents inside closing modal */
+#completed{
+  font-size: 18vw;    
+}
+#time{
+  font-size: 17vw;
+}
+.fas.fa-redo-alt{
+  font-size: 15vw;
 }
 
 /*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/

@@ -10,8 +10,8 @@ $("document").ready(function () {
     $(this).toggleClass("flip");
   });
 
-  /********************** do cards match or not?: checks to see if cards match ***********************/
-  //adds "clicked" class to cards when clicked
+  /********************** do cards match or not?: checks to see if cards match*/
+  // adds "clicked" class to cards when clicked
   $(".wholeCard").click(function () {
     $(this).addClass("clicked");
     // picking two cards
@@ -40,20 +40,40 @@ $("document").ready(function () {
     }, 600);
   }
 
-  /********************** produces end game modal ***********************/
-  //shows endgame model once game is completed
+  /********************** countup timer for the gameplay duration */
+  // times how long user plays the game
+  function CountUpTimer() {
+    // start time
+    let timeDuration = 0;
+    // ascending counting time
+    let countingTime = setInterval(function () {
+      $("#timer").html(`Timer: ${timeDuration}`);
+      timeDuration += 1;
+    }, 1000);
+    // stops counting when all cards are matched
+    $(".wholeCard").click(function () {
+      if ($(".hide").length === 12) {
+        clearInterval(countingTime);
+      };
+    });
+  };
+  CountUpTimer();
+
+  /********************** produces end game modal */
+  // shows endgame model once game is completed
   function conditonToMakeEndGameModalAppear() {
     $(".wholeCard").click(function () {
       if ($(".hide").length === 12) {
-          setTimeout(function() {
-        $(".modalBackground").show();
-        $(".modalBackground #start").replaceWith(`
+        setTimeout(function () {
+          $(".modalBackground").show();
+          $(".modalBackground #start").replaceWith(`
         <div class="endgameBackground">
             <h1 id="completed">Completed!</h1>
             <h2 id="time">Time: </h2>
             <i class="fas fa-redo-alt"></i>
-        </div>`);              
-          }, 600);
+        </div>`);
+        $("#time").html(`${timeDuration}`);
+        }, 600);
       };
     });
   };
@@ -84,28 +104,31 @@ $("document").ready(function () {
 
 
 
+  //  function durationOfTheUserPlayingTheGame() {
+  //       let liveDate = new Date();
+  //       let minutes = liveDate.getMinutes();
+  //       let seconds = liveDate.getSeconds();
 
+  //       setInterval(function() {
+  //       $("#start").click(function(){
+  //         $("#timer").text(`Timer: ${minutes}:${seconds}`);
+  //       }, 1000);
+  //       });
+  //   };
+  //   durationOfTheUserPlayingTheGame();
 
+  //   let minutesAndSeconds = `${minutes}:${seconds}`;
 
-
-
-
-
-
-  /********************** functions to be called out in "are all cards matched?" section */
-
-  // prints out HTML of end game modal
-
-//   function endGameModal() {
-//     let endGame = $(".modalBackground").append(`
-//         <div class="endgameBackground">
-//             <h1 id="completed">Completed!</h1>
-//             <h2 id="time">Time: </h2>
-//             <i class="fas fa-redo-alt"></i>
-//         </div>`);
-//   }
-
-
+  //     let ascendingTime = 0;
+  //     setInterval(function () {
+  //         ascendingTime ++;
+  //         if(ascendingTime>0){
+  //             $("#timer").innerHTML = ascendingTime;
+  //         }
+  //     }, 1000)
+  //   };
+  //   countUp();
+  //   console.log(countUp());
 
   // setInterval(function(){
   //     let countUpStart = 0;
