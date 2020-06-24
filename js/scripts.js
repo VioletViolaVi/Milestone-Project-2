@@ -23,9 +23,9 @@ $("document").ready(function () {
           $(".clicked").first().data("image") ===
           $(".clicked").last().data("image")
         ) {
-            toRemoveMatchingCards();
+          toRemoveMatchingCards();
         } else {
-            // flips back non matching cards
+          // flips back non matching cards
           toFlipBackUnmatchedCards();
         }
       }
@@ -98,83 +98,47 @@ $("document").ready(function () {
       $(".wholeCard").removeClass("hide");
       // starts timer from beginning again
       clearInterval(CountUpTimer());
+      // rearranges cards for every new game play
+      mixingUpCards();
     });
   }
 
+  /********************** shuffles cards */
+  function mixingUpCards() {
+    // brings out <div> children of said class
+    let cards = document.querySelector(".cardsContainer");
+    // Fisher-Yates shuffle method
+    for (i = cards.children.length; i > -1; i--) {
+      cards.appendChild(cards.children[(Math.random() * i) | 0]);
+    }
+    console.log(cards);
+  }
+  // ensures order is always random when game is first opened
+  mixingUpCards();
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   function nonFlip() {
-// //     if ($(".clicked").length === 2) {
-// //       setTimeout((nonFlip) => {
-// //         let stop = $(".wholeCard").addClass("nonFlip");
-// //         console.log(stop);
-// //       }, 400);
-// //     }
-// //   }
   
 
-// //   function nonFlipRemoval() {
-// //     if ($(".clicked").length === 0) {
-// //       clearTimeout(nonFlip(stop));
-// //     }
-// //   }
+  
 
-  // let positionNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
-  //  function numbersShuffle(numbers){
-  //     let newPos;
-  //     let temp;
-  //     for (let i=numbers.length-1; i>0; i--) {
-  //         newPos = Math.floor(Math.random()*(i+1));
-  //         temp=numbers[i];
-  //         numbers[i]=numbers[newPos];
-  //         numbers[newPos]=temp;
-  //     }
-  //     return numbers;
-  // let cards = document.querySelectorAll(".wholeCard");
-  // let newCards = cards.append(numbersShuffle());
-  // }
-  // console.log(numbersShuffle(newCards));
+  
+ 
 
-  //     // Fisher-Yates shuffle method
-  //     function shufflingCards() {
-  //     //node.list of cards
-  //     let images = document.querySelectorAll(".wholeCard");
-  //     // converts node.list to array
-  //     let imagesArray = Array.from(images);
-  //       // declaring the card position picked at random
-  //       let randomlyPicked;
-  //       // declaring the card position picked started from the back going backwards
-  //       let decrementallyPicked;
-  //       // last item in the array; swaps with items in position numbers greater than zero; going backwards in the array
-  //       for (i = imagesArray.length - 1; i > 0; i--) {
-  //         let randomlyPicked = Math.floor(Math.random() * imagesArray);
-  //         let decrementingCard = imagesArray[i];
-  //         imagesArray[i] = imagesArray[randomlyPicked];
-  //         imagesArray[randomlyPicked] = decrementingCard;
-  //       };
-  //     };
-  // console.log(shufflingCards());
-  //  shufflingCards();
+  //   function nonFlip() {
+  // //     if ($(".clicked").length === 2) {
+  // //       setTimeout((nonFlip) => {
+  // //         let stop = $(".wholeCard").addClass("nonFlip");
+  // //         console.log(stop);
+  // //       }, 400);
+  // //     }
+  // //   }
+
+  // //   function nonFlipRemoval() {
+  // //     if ($(".clicked").length === 0) {
+  // //       clearTimeout(nonFlip(stop));
+  // //     }
+  // //   }
 
   //    // removes clicking ability after two picked out cards
   //    function removeClickingOnCards() {
@@ -188,4 +152,5 @@ $("document").ready(function () {
   //            $(this).on("click");
   //        });             restoreClickingOnCards();
   //    };
+
 });

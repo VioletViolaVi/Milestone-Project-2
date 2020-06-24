@@ -65,6 +65,8 @@ This project is about creating a card matching game using cartoon pictures of zo
 - The project used Font Awesome to provide the restart icon that would be used to restart the game.
 ### Google Fonts
 - The project used Google Font to provide the font style used for this project.
+### Stack Overflow
+- The project used Stack Overflow to provide information on the randomisation of cards for this project.
 
 
 # URL Links
@@ -85,8 +87,6 @@ The following links, from the third party websites, were used to create this pro
   * http://clipart-library.com/clipart/p6iyk8bcn.htm
 - Zebra
   * http://clipart-library.com/clipart/8cEjyrkKi.htm
-- Zoo Keeper
-  * http://clipart-library.com/clipart/48302.htm
 - Zoo
   * http://clipart-library.com/clipart/292862.htm
 ### Font Awesome
@@ -96,7 +96,8 @@ The following links, from the third party websites, were used to create this pro
 - https://fonts.google.com/specimen/Heebo?query=heebo&selection.family=Heebo
 ### jQuery
 - https://jquery.com/download/
-
+### Stack Overflow
+- https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order 
 
 # Deployment 
 On completion in creating this project, the following procedures were taken in order to deploy the website:
