@@ -85,6 +85,10 @@ The following links, from the third party websites, were used to create this pro
   * http://clipart-library.com/clipart/p6iyk8bcn.htm
 - Zebra
   * http://clipart-library.com/clipart/8cEjyrkKi.htm
+- Zoo Keeper
+  * http://clipart-library.com/clipart/48302.htm
+- Zoo
+  * http://clipart-library.com/clipart/292862.htm
 ### Font Awesome
 - Restart icon
    * https://fontawesome.com/icons/redo-alt?style=solid 

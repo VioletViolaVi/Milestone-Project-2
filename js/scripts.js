@@ -12,37 +12,44 @@ $("document").ready(function () {
   });
 
   /********************** checks if cards match*/
-  // adds "clicked" class to cards when clicked
-  $(".wholeCard").click(function () {
-    $(this).addClass("clicked");
-    // picking two cards
-    if ($(".clicked").length === 2) {
-      // checking data of the two cards
-      if (
-        $(".clicked").first().data("image") ===
-        $(".clicked").last().data("image")
-      ) {
-        // hides matched cards whilst keeping them in place and removes clicked class so "length === 2" continues to work
-        $(".clicked").addClass("hide").removeClass("clicked");
-      } else {
-        // flips back non matching cards
-        toFlipBackUnmatchedCards();
-        // removes clicked class so "length === 2" continues to work
-        $(".clicked").removeClass("clicked");
+  function checkingForMatchingCards() {
+    // adds "clicked" class to cards when clicked
+    $(".wholeCard").click(function () {
+      $(this).addClass("clicked");
+      // picking two cards
+      if ($(".clicked").length === 2) {
+        // checking data of the two cards
+        if (
+          $(".clicked").first().data("image") ===
+          $(".clicked").last().data("image")
+        ) {
+            toRemoveMatchingCards();
+        } else {
+            // flips back non matching cards
+          toFlipBackUnmatchedCards();
+        }
       }
-    }
-  });
+    });
+  }
+  checkingForMatchingCards();
 
-  /********************** hides non matching pairs */
-  // cards flip back on their own after a set time
+  /********************** removes matching pairs */
+  function toRemoveMatchingCards() {
+    // hides matched cards whilst keeping them in place and removes clicked class so "length === 2" continues to work
+    $(".clicked").addClass("hide").removeClass("clicked");
+  }
+
+  /********************** flips back non matching pairs */
   function toFlipBackUnmatchedCards() {
+    // cards flip back on their own after a set time
     setTimeout(function () {
       $(".flip").toggleClass("flip");
     }, 600);
+    // removes clicked class so "length === 2" continues to work
+    $(".clicked").removeClass("clicked");
   }
 
-  /********************** countup timer for gameplay */
-  // times how long user plays game
+  /********************** countup timer to time length of gameplay */
   function CountUpTimer() {
     // start time
     let timeDuration = 0;
@@ -59,8 +66,7 @@ $("document").ready(function () {
     });
   }
 
-  /********************** produces end game modal */
-  // shows endgame model once game is completed
+  /********************** produces end game info */
   function conditonToMakeEndGameModalAppear() {
     $(".wholeCard").click(function () {
       if ($(".hide").length === 12) {
@@ -82,7 +88,6 @@ $("document").ready(function () {
   conditonToMakeEndGameModalAppear();
 
   /********************** restarts game */
-  // used instead of refreshing the page
   function restartGame() {
     // makes restart button clickable and reset game
     $(".fas.fa-redo-alt").click(function () {
@@ -97,54 +102,90 @@ $("document").ready(function () {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-  //  // removes clicking ability after two picked out cards
-  //  function removeClickingOnCards() {
-  //      $(".wholeCard").click(function(){
-  //          $(this).off("click");
-  //      });          removeClickingOnCards();
-  //  };
 
-  //  // brings back clicking ability after two picked out cards dissapper or flip back
-  //  function restoreClickingOnCards() {
-  //      $(".wholeCard").click(function(){
-  //          $(this).on("click");
-  //      });             restoreClickingOnCards();
-  //  };
 
-  //   //node.list of cards
-  //   let animals = document.querySelectorAll(".wholeCard");
-  //   // converts node.list to array
-  //   let animalArray = Array.from(animals);
-  //   // Fisher-Yates shuffle method
-  //   function shufflingCards() {
-  //     // declaring the card position picked at random
-  //     let randomlyPicked;
-  //     // declaring the card position picked started from the back going backwards
-  //     let decrementallyPicked;
-  //     // last item in the array; swaps with items in position numbers greater than zero; going backwards in the array
-  //     for (i = animalArray.length - 1; i > 0; i--) {
-  //       let randomlyPicked = Math.floor(Math.random() * 12);
-  //       let decrementingCard = animalArray[i];
-  //       animalArray[i] = animalArray[randomlyPicked];
-  //       animalArray[randomlyPicked] = decrementingCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   function nonFlip() {
+// //     if ($(".clicked").length === 2) {
+// //       setTimeout((nonFlip) => {
+// //         let stop = $(".wholeCard").addClass("nonFlip");
+// //         console.log(stop);
+// //       }, 400);
+// //     }
+// //   }
+  
+
+// //   function nonFlipRemoval() {
+// //     if ($(".clicked").length === 0) {
+// //       clearTimeout(nonFlip(stop));
+// //     }
+// //   }
+
+  // let positionNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
+  //  function numbersShuffle(numbers){
+  //     let newPos;
+  //     let temp;
+  //     for (let i=numbers.length-1; i>0; i--) {
+  //         newPos = Math.floor(Math.random()*(i+1));
+  //         temp=numbers[i];
+  //         numbers[i]=numbers[newPos];
+  //         numbers[newPos]=temp;
   //     }
-  //   }
+  //     return numbers;
+  // let cards = document.querySelectorAll(".wholeCard");
+  // let newCards = cards.append(numbersShuffle());
+  // }
+  // console.log(numbersShuffle(newCards));
+
+  //     // Fisher-Yates shuffle method
+  //     function shufflingCards() {
+  //     //node.list of cards
+  //     let images = document.querySelectorAll(".wholeCard");
+  //     // converts node.list to array
+  //     let imagesArray = Array.from(images);
+  //       // declaring the card position picked at random
+  //       let randomlyPicked;
+  //       // declaring the card position picked started from the back going backwards
+  //       let decrementallyPicked;
+  //       // last item in the array; swaps with items in position numbers greater than zero; going backwards in the array
+  //       for (i = imagesArray.length - 1; i > 0; i--) {
+  //         let randomlyPicked = Math.floor(Math.random() * imagesArray);
+  //         let decrementingCard = imagesArray[i];
+  //         imagesArray[i] = imagesArray[randomlyPicked];
+  //         imagesArray[randomlyPicked] = decrementingCard;
+  //       };
+  //     };
+  // console.log(shufflingCards());
+  //  shufflingCards();
+
+  //    // removes clicking ability after two picked out cards
+  //    function removeClickingOnCards() {
+  //         $(".wholeCard").off("click");
+  //          removeClickingOnCards();
+  //    };
+
+  //    // brings back clicking ability after two picked out cards dissapper or flip back
+  //    function restoreClickingOnCards() {
+  //        $(".wholeCard").click(function(){
+  //            $(this).on("click");
+  //        });             restoreClickingOnCards();
+  //    };
 });

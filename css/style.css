@@ -1,22 +1,23 @@
 /********************** sets custom default for all elements */
 * {
-  font-family: "Heebo", sans-serif;
+  font-family: 'Pangolin', cursive;
   padding: 0px;
   margin: 0px;
   text-align: center;
   box-sizing: border-box;
+  color: brown;
 }
 
 /********************** prevents imgs from having the same bg-colour */
 body {
   height: 100%;
-  background: rgba(173, 216, 230, 0.733);
+  background: rgb(15, 250, 15);
 }
 
 /*------------------------------------------------------------------------- TITLES -------------------------------------------------------------------------*/
 
 /********************** styles main heading */
-#title-zoo {
+#title {
   margin-top: 5px;
   font-size: 15vw;
 }
@@ -25,6 +26,17 @@ body {
 #timer {
   font-size: 10vw;
 }
+
+
+#zoo,#zoo-keeper{
+    width: 100px;
+}
+
+
+
+
+
+
 
 /*------------------------------------------------------------------------- MODALS -------------------------------------------------------------------------*/
 
@@ -44,10 +56,9 @@ body {
 /********************** styles both the start button modal */
 #start {
   width: 100%;
-  padding: 10px 5px;
   border-radius: 10px;
-  background-color: lightblue;
-  border: 3px solid rgb(109, 192, 219);
+  background-color:  greenyellow;
+  border: 3px solid darkgreen;
 }
 
 /********************** styles the start modal */
@@ -92,8 +103,8 @@ section.decorativeFlip {
 /********************** styles front and back side of cards */
 .front,
 .back {
-  border: 3px solid palevioletred;
-  background-color: yellow;
+  border: 3px solid darkgreen;
+  background-color: greenyellow;
   height: 130px;
   width: 95px;
   border-radius: 5px;
@@ -124,6 +135,11 @@ img {
 /********************** to flip cards back and forth */
 .flip {
   transform: rotateY(180deg);
+}
+
+/********************** to stop cards from flipping once 2 have been selected */
+.nonFlip{
+    transform: none;
 }
 
 /********************** to remove matching cards */
@@ -173,7 +189,7 @@ img {
 /* extra large */
 @media (min-width: 1200px) {
   /********************** styles main heading */
-  #title-zoo {
+  #title {
     font-size: 9vw;
   }
 
