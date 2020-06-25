@@ -19,6 +19,7 @@ This project is about creating a card matching game using cartoon pictures of zo
 - As the designer of the Sadie’s zoo card matching game, I want to create a popup that displays how long the user took in completing the game, after each try.
 - As the designer of the Sadie’s zoo card matching game, I want to implement a functionality that makes the cards shuffle after each game play, so the user remains interested in the game.
 
+
 # Sadie’s Zoo Wireframes
 <img src="wireframes/img/1.mobile.PNG" alt="Screenshot of how the game looks on a mobile before starting.">
 <img src="wireframes/img/2.mobile.PNG" alt="Screenshot of how the game looks on a mobile with no card matches.">
@@ -32,6 +33,33 @@ This project is about creating a card matching game using cartoon pictures of zo
 <img src="wireframes/img/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches..">
 <img src="wireframes/img/11.desktop.PNG" alt="Screenshot of how the game looks on a desktop with a card match.">
 <img src="wireframes/img/12.desktop.PNG" alt="Screenshot of how the game looks on a desktop once completed, with the user's time spent and a restart button.">
+
+
+# Features
+### Existing Features
+#### Modal
+- A modal was added to be shown at the start of this game. The modal acts as a placeholder for the start button. It makes it visually clear to the user that they are about to begin the game and therefore should get ready.
+#### Start button
+- The start button was added and placed inside as part of the game’s modal. Clicking this button starts the game as well as the timer. This button was placed in the centre to be in clear view of the user.
+#### Logo image
+- The image seen at the top of the webpage is a group of cartoon zoo animals. This acts as the logo for the game. It gives the user an indication on what images they should expect to see when they click on the cards.
+#### Opening title
+- The beginning title, “Sadie’s Zoo”, is a short and clear explanation on what the game is about. This helps maintain the user’s interest as they are not bombarded with information at the start that would make them not want to play the game. As a result, they are more likely to further engage with this activity.
+#### Cards
+- The cards each hold two images. Before they are clicked on and flipped, all the cards are seen with a question mark image on them. After the cards are clicked on and flipped, each card is shown to have an image of a cartoon zoo animal. 
+- Every two cards has a picture of the same zoo animal. This is so the user will be able to find a pair of cards that match with the same zoo animal on them. Once a pair has been found, the cards will disappear. If not, they will flip back to displaying their question mark image side. 
+- All the cards are seen with a question mark image first because they all need to look the same to challenge the user into finding the correct animal image pairs.
+#### Timer
+- The timer displays a counter that counts from zero at the start of the game. It shows the amount of time the user used to complete the card matching game. This counter counts in ascending order until the game is completed. If the game is restarted, the counter reverts back to zero and counts again. 
+- The timer also acts as a score. As it shows the user how much time they took, it makes them want to try again and see if they can complete the game quicker.
+#### Closing title
+- A “Completed!” title is displayed once all the cards have been matched. This informs the user that they have successfully reached the end of the game. 
+#### Restart button
+- A restart button symbol is shown at the same time as the “Completed!” title. This allows the user to know that they have the option of playing again by clicking on it. The restart button will covertly re-randomise the card’s order and reset the counter back to zero. This button is an easy and convenient way for the user to play the game again.   
+#### Colours
+- The colours used for this game were: rgba(0, 0, 0, 0.63), brown, rgb(15, 250, 15), green-yellow and dark-green. The colour rgba(0, 0, 0, 0.63) was used for the modal, to help make the start button stand out clearly to the user. Brown, rgb(15, 250, 15), green-yellow and dark-green were used to make the game resemble the colours of a jungle theme in order to match the fact that zoo animals were being used.
+#### Font
+- The Pangolin font was used to add style to the design of the game. It was also used because the font is legible so users would have no difficulty reading any of the text present. 
 
 
 # Technologies Used
@@ -99,6 +127,7 @@ The following links, from the third party websites, were used to create this pro
 ### Stack Overflow
 - https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order 
 
+
 # Deployment 
 On completion in creating this project, the following procedures were taken in order to deploy the website:
 1) First, the repository section on GitHub was entered and the project link containing the website and wireframes to be deployed, was clicked on.
@@ -130,3 +159,9 @@ In order to locally run this code, this project would have to be cloned from Git
 ### Acknowledgements
 - I received inspiration for this project from the BrandedBrothers card matching game.
   - www.brandedbrothers.com
+- I received inspiration for this project from the following youtube videos:
+  - https://www.youtube.com/watch?v=zEo42QuZPJw&list=LL2enFJYYjL4OCp7Cu37PM2g
+  - https://www.youtube.com/watch?v=Eq4bUSWGv1Y&list=LL2enFJYYjL4OCp7Cu37PM2g&index=5&t=858s
+  - https://www.youtube.com/watch?v=ZniVgo8U7ek&t=474s
+  - https://www.youtube.com/watch?v=bbb9dZotsOc&t=1630s
+  - https://www.youtube.com/watch?v=3uuQ3g92oPQ&t=1907s

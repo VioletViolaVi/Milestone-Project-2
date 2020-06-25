@@ -23,6 +23,7 @@ $("document").ready(function () {
           $(".clicked").first().data("image") ===
           $(".clicked").last().data("image")
         ) {
+          // hides the matching card pair
           toRemoveMatchingCards();
         } else {
           // flips back non matching cards
@@ -111,19 +112,74 @@ $("document").ready(function () {
     for (i = cards.children.length; i > -1; i--) {
       cards.appendChild(cards.children[(Math.random() * i) | 0]);
     }
-    console.log(cards);
+    console.log(cards); // REMOVE AT END!!!!!
+    
   }
   // ensures order is always random when game is first opened
   mixingUpCards();
 
-  
 
-  
 
-  
 
-  
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // function doubleClicked() {
+  // //     if($(".clicked").click(function () {
+  // //         $(this).removeClass("clicked");
+  // //     })){
+
+  // //     }
+  // // }
+  // //   doubleClicked();
 
   //   function nonFlip() {
   // //     if ($(".clicked").length === 2) {
@@ -152,5 +208,4 @@ $("document").ready(function () {
   //            $(this).on("click");
   //        });             restoreClickingOnCards();
   //    };
-
 });
