@@ -1,21 +1,52 @@
 // waits until DOM has been fully loaded
-
-// prevents other cards from flipping when two are flipped already
-let stopFlip = false;
-
 $("document").ready(function () {
-  // removes start button and modal background when clicked and starts counter
-  $("#start").click(function () {
-    CountUpTimer();
-    $(".modalBackground").hide();
-  });
 
-  // flips cards when clicked
-  $(".wholeCard").click(function () {
+  // prevents other cards from flipping when two are flipped already
+  let stopFlip = false;
+
+  /********************** begins game*/
+  function startGame() {
+    // removes start button and modal background when clicked and starts counter
+    $("#start").click(function () {
+      CountUpTimer();
+      $(".modalBackground").hide();
+    });
+  }
+  startGame();
+
+  /********************** turns cards over*/
+  function flipsCards() {
+    // flips cards when clicked
+    $(".wholeCard").click(function () {
       // helps prevents other cards from flipping when two are flipped already
-      if(stopFlip) return;
-    $(this).toggleClass("flip");
-  });
+      if (stopFlip) return;
+      $(this).toggleClass("flip");
+    });
+  }
+  flipsCards();
+
+
+
+
+
+
+  function singleCardRepeated() {
+    $(".wholeCard").click(function () {
+      if ($(".clicked").first()) {
+        $(this).off("click");
+        console.log("yep 1st one");
+      } else {
+        $(this).on("click");
+        console.log("nope not 1st one");
+      }
+    });
+  }
+  singleCardRepeated();
+
+
+
+
+  
 
   /********************** checks if cards match*/
   function checkingForMatchingCards() {
@@ -29,7 +60,7 @@ $("document").ready(function () {
           $(".clicked").first().data("image") ===
           $(".clicked").last().data("image")
         ) {
-          // hides the matching card pair       
+          // hides the matching card pair
           toRemoveMatchingCards();
         } else {
           // flips back non matching cards
@@ -48,8 +79,8 @@ $("document").ready(function () {
 
   /********************** flips back non matching pairs */
   function toFlipBackUnmatchedCards() {
-      // helps prevents other cards from flipping when two are flipped already
-      stopFlip  = true;
+    // helps prevents other cards from flipping when two are flipped already
+    stopFlip = true;
     // cards flip back on their own after a set time
     setTimeout(function () {
       $(".flip").toggleClass("flip");
@@ -142,37 +173,26 @@ $("document").ready(function () {
 
 
 
+  //   function lockingSingleCard() {
+  //     $(".wholeCard").click(function () {
+  //       $(this).addClass("lock");
 
+  //       let lock = setTimeout(function () {
+  //         if ($(".lock")) {
+  //           $(".lock").off("click");
+  //         }
+  //       }, 300);
+  //     });
+  //   }
+  //   lockingSingleCard();
 
-
-
-
-
-
-
-
-
-
-//   function lockingSingleCard() {
-//     $(".wholeCard").click(function () {
-//       $(this).addClass("lock");
-
-//       let lock = setTimeout(function () {
-//         if ($(".lock")) {
-//           $(".lock").off("click");
-//         }
-//       }, 300);
-//     });
-//   }
-//   lockingSingleCard();
-
-//   function unlockingSingleCard() {
-//     if ($(".wholeCard.flip.lock.clicked")===2) {
-//       clearTimeout(lockingSingleCard());
-//       $(".wholeCard.lock").on("click");
-//     }
-//   }
-//   unlockingSingleCard();
+  //   function unlockingSingleCard() {
+  //     if ($(".wholeCard.flip.lock.clicked")===2) {
+  //       clearTimeout(lockingSingleCard());
+  //       $(".wholeCard.lock").on("click");
+  //     }
+  //   }
+  //   unlockingSingleCard();
 
   //   function doubleCardClick() {
   //       $(".wholeCard").click(function () {
