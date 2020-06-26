@@ -132,7 +132,7 @@ img {
 
 /********************** to stop cards from flipping once 2 have been selected */
 .nonFlip{
-    transform: none;
+    transform: rotateY(0deg);
 }
 
 /********************** to remove matching cards */

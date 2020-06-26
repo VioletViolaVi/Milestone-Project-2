@@ -1,4 +1,8 @@
 // waits until DOM has been fully loaded
+
+// prevents other cards from flipping when two are flipped already
+let stopFlip = false;
+
 $("document").ready(function () {
   // removes start button and modal background when clicked and starts counter
   $("#start").click(function () {
@@ -8,35 +12,10 @@ $("document").ready(function () {
 
   // flips cards when clicked
   $(".wholeCard").click(function () {
+      // helps prevents other cards from flipping when two are flipped already
+      if(stopFlip) return;
     $(this).toggleClass("flip");
   });
-
-  function doubleCardClick() {
-      $(".wholeCard").click(function () {
-      if($(".wholeCard").first().data("number")===$(".wholeCard").first().data("number")){
-          $(this).off("click");
-          console.log("worked");
-      }else{
-          console.log("didn't worked");
-      }          
-      })
-  }
-  doubleCardClick();
-
-    function removeDoubleCardClick() {
-      $(".wholeCard").click(function () {
-          $(".wholeCard").on("click");
-          console.log("worked");         
-      })
-  }
-  removeDoubleCardClick();
-
-
-
-
-
-
-
 
   /********************** checks if cards match*/
   function checkingForMatchingCards() {
@@ -50,7 +29,7 @@ $("document").ready(function () {
           $(".clicked").first().data("image") ===
           $(".clicked").last().data("image")
         ) {
-          // hides the matching card pair
+          // hides the matching card pair       
           toRemoveMatchingCards();
         } else {
           // flips back non matching cards
@@ -69,9 +48,13 @@ $("document").ready(function () {
 
   /********************** flips back non matching pairs */
   function toFlipBackUnmatchedCards() {
+      // helps prevents other cards from flipping when two are flipped already
+      stopFlip  = true;
     // cards flip back on their own after a set time
     setTimeout(function () {
       $(".flip").toggleClass("flip");
+      // helps prevents other cards from flipping when two are flipped already
+      stopFlip = false;
     }, 600);
     // removes clicked class so "length === 2" continues to work
     $(".clicked").removeClass("clicked");
@@ -139,8 +122,6 @@ $("document").ready(function () {
     for (i = cards.children.length; i > -1; i--) {
       cards.appendChild(cards.children[(Math.random() * i) | 0]);
     }
-    console.log(cards); // REMOVE AT END!!!!!
-    
   }
   // ensures order is always random when game is first opened
   mixingUpCards();
@@ -172,32 +153,46 @@ $("document").ready(function () {
 
 
 
+//   function lockingSingleCard() {
+//     $(".wholeCard").click(function () {
+//       $(this).addClass("lock");
 
+//       let lock = setTimeout(function () {
+//         if ($(".lock")) {
+//           $(".lock").off("click");
+//         }
+//       }, 300);
+//     });
+//   }
+//   lockingSingleCard();
 
+//   function unlockingSingleCard() {
+//     if ($(".wholeCard.flip.lock.clicked")===2) {
+//       clearTimeout(lockingSingleCard());
+//       $(".wholeCard.lock").on("click");
+//     }
+//   }
+//   unlockingSingleCard();
 
+  //   function doubleCardClick() {
+  //       $(".wholeCard").click(function () {
+  //       if($(".wholeCard").first().data("number")===$(".wholeCard").first().data("number")){
+  //           $(this).off("click");
+  //           console.log("worked");
+  //       }else{
+  //           console.log("didn't worked");
+  //       }
+  //       })
+  //   }
+  //   doubleCardClick();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  //     function removeDoubleCardClick() {
+  //       $(".wholeCard").click(function () {
+  //           $(".wholeCard").on("click");
+  //           console.log("worked");
+  //       })
+  //   }
+  //   removeDoubleCardClick();
 
   // function doubleClicked() {
   // //     if($(".clicked").click(function () {
@@ -222,17 +217,4 @@ $("document").ready(function () {
   // //       clearTimeout(nonFlip(stop));
   // //     }
   // //   }
-
-  //    // removes clicking ability after two picked out cards
-  //    function removeClickingOnCards() {
-  //         $(".wholeCard").off("click");
-  //          removeClickingOnCards();
-  //    };
-
-  //    // brings back clicking ability after two picked out cards dissapper or flip back
-  //    function restoreClickingOnCards() {
-  //        $(".wholeCard").click(function(){
-  //            $(this).on("click");
-  //        });             restoreClickingOnCards();
-  //    };
 });
