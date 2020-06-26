@@ -11,6 +11,33 @@ $("document").ready(function () {
     $(this).toggleClass("flip");
   });
 
+  function doubleCardClick() {
+      $(".wholeCard").click(function () {
+      if($(".wholeCard").first().data("number")===$(".wholeCard").first().data("number")){
+          $(this).off("click");
+          console.log("worked");
+      }else{
+          console.log("didn't worked");
+      }          
+      })
+  }
+  doubleCardClick();
+
+    function removeDoubleCardClick() {
+      $(".wholeCard").click(function () {
+          $(".wholeCard").on("click");
+          console.log("worked");         
+      })
+  }
+  removeDoubleCardClick();
+
+
+
+
+
+
+
+
   /********************** checks if cards match*/
   function checkingForMatchingCards() {
     // adds "clicked" class to cards when clicked
@@ -75,7 +102,7 @@ $("document").ready(function () {
         setTimeout(function () {
           $("#score").replaceWith(`
         <div id="endGame">
-            <h1 id="completed">Completed!</h1>
+            <h1 id="completed">Completed</h1>
             <i class="fas fa-redo-alt"></i>
         </div>`);
           // allows game to restart when its button is clicked
