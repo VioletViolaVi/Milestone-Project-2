@@ -1,6 +1,5 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
-
   // prevents other cards from flipping when two are flipped already
   let stopFlip = false;
 
@@ -32,44 +31,25 @@ $("document").ready(function () {
       $(this).addClass("clicked");
       // picking two cards
       if ($(".clicked").length === 2) {
-          checkForMatch();
+        checkForMatch();
       }
- 
     });
   }
   collectingTwoCards();
 
-
- /********************** checks if cards match*/
+  /********************** checks if cards match*/
   function checkForMatch() {
-        // checking data of the two cards
-        if (
-          $(".clicked").first().data("image") ===
-          $(".clicked").last().data("image")
-        ) {
-          // hides the matching card pair
-          toRemoveMatchingCards();
-        } else {
-          // flips back non matching cards
-          toFlipBackUnmatchedCards();
-        }      
+    // checking data of the two cards
+    if (
+      $(".clicked").first().data("image") === $(".clicked").last().data("image")
+    ) {
+      // hides the matching card pair
+      toRemoveMatchingCards();
+    } else {
+      // flips back non matching cards
+      toFlipBackUnmatchedCards();
+    }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   /********************** removes matching pairs */
   function toRemoveMatchingCards() {
@@ -156,6 +136,7 @@ $("document").ready(function () {
   }
   // ensures order is always random when game is first opened
   mixingUpCards();
+  
 
 
 
@@ -171,13 +152,29 @@ $("document").ready(function () {
 
 
 
-//   function doubleCardClick() {
-//     $(".wholeCard").click(function () {
-//         $(this).off("click");
-//         console.log("worked");
-//     });
-//   }
-//   doubleCardClick();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  //   function doubleCardClick() {
+  //     $(".wholeCard").click(function () {
+  //         $(this).off("click");
+  //         console.log("worked");
+  //     });
+  //   }
+  //   doubleCardClick();
 
   //   function lockingSingleCard() {
   //     $(".wholeCard").click(function () {
