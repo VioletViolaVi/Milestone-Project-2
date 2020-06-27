@@ -25,36 +25,23 @@ $("document").ready(function () {
   }
   flipsCards();
 
-
-
-
-
-
-  function singleCardRepeated() {
-    $(".wholeCard").click(function () {
-      if ($(".clicked").first()) {
-        $(this).off("click");
-        console.log("yep 1st one");
-      } else {
-        $(this).on("click");
-        console.log("nope not 1st one");
-      }
-    });
-  }
-  singleCardRepeated();
-
-
-
-
-  
-
-  /********************** checks if cards match*/
-  function checkingForMatchingCards() {
+  /********************** picks two cards at once*/
+  function collectingTwoCards() {
     // adds "clicked" class to cards when clicked
     $(".wholeCard").click(function () {
       $(this).addClass("clicked");
       // picking two cards
       if ($(".clicked").length === 2) {
+          checkForMatch();
+      }
+ 
+    });
+  }
+  collectingTwoCards();
+
+
+ /********************** checks if cards match*/
+  function checkForMatch() {
         // checking data of the two cards
         if (
           $(".clicked").first().data("image") ===
@@ -65,11 +52,24 @@ $("document").ready(function () {
         } else {
           // flips back non matching cards
           toFlipBackUnmatchedCards();
-        }
-      }
-    });
+        }      
   }
-  checkingForMatchingCards();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /********************** removes matching pairs */
   function toRemoveMatchingCards() {
@@ -171,7 +171,13 @@ $("document").ready(function () {
 
 
 
-
+//   function doubleCardClick() {
+//     $(".wholeCard").click(function () {
+//         $(this).off("click");
+//         console.log("worked");
+//     });
+//   }
+//   doubleCardClick();
 
   //   function lockingSingleCard() {
   //     $(".wholeCard").click(function () {
