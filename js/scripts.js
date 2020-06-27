@@ -28,9 +28,9 @@ $("document").ready(function () {
   function collectingTwoCards() {
     // adds "clicked" class to cards when clicked
     $(".wholeCard").click(function () {
-      $(this).addClass("clicked");
+      $(this).addClass("selected");
       // picking two cards
-      if ($(".clicked").length === 2) {
+      if ($(".wholeCard.flip.selected").length === 2) {
         checkForMatch();
       }
     });
@@ -41,7 +41,7 @@ $("document").ready(function () {
   function checkForMatch() {
     // checking data of the two cards
     if (
-      $(".clicked").first().data("image") === $(".clicked").last().data("image")
+      $(".wholeCard.flip.selected").first().data("image") === $(".wholeCard.flip.selected").last().data("image")
     ) {
       // hides the matching card pair
       toRemoveMatchingCards();
@@ -54,7 +54,7 @@ $("document").ready(function () {
   /********************** removes matching pairs */
   function toRemoveMatchingCards() {
     // hides matched cards whilst keeping them in place and removes clicked class so "length === 2" continues to work
-    $(".clicked").addClass("hide").removeClass("clicked");
+    $(".wholeCard.flip.selected").addClass("hide").removeClass("selected");
   }
 
   /********************** flips back non matching pairs */
@@ -68,7 +68,7 @@ $("document").ready(function () {
       stopFlip = false;
     }, 600);
     // removes clicked class so "length === 2" continues to work
-    $(".clicked").removeClass("clicked");
+    $(".wholeCard.flip.selected").removeClass("selected");
   }
 
   /********************** countup timer to time length of gameplay */
@@ -137,6 +137,12 @@ $("document").ready(function () {
   // ensures order is always random when game is first opened
   mixingUpCards();
   
+// function forDoubleClicked() {
+//     setTimeout(function() {
+//     $(".wholeCard").addClass("nonFlip");
+//     console.log("it happened");
+// }, 100);
+// }
 
 
 
@@ -167,7 +173,6 @@ $("document").ready(function () {
 
 
 
-  
   //   function doubleCardClick() {
   //     $(".wholeCard").click(function () {
   //         $(this).off("click");
