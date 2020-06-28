@@ -131,7 +131,7 @@ img {
 }
 
 /********************** to stop cards from flipping once 2 have been selected */
-.nonFlip{
+.stopFlip{
     transform: rotateY(0deg);
 }
 
@@ -182,12 +182,12 @@ img {
 /* extra large */
 @media (min-width: 1200px) {
   /********************** styles main heading */
-  #title {
+  #title,#completed {
     font-size: 9vw;
   }
 
   /********************** styles timer */
-  #timer {
+  #timer,.fas.fa-redo-alt {
     font-size: 5vw;
   }
 

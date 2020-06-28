@@ -23,6 +23,14 @@ $("document").ready(function () {
     });
   }
   flipsCards();
+  
+  function stopDoubleClick() {
+    $(".wholeCard").click(function () {
+      $(this).off("click");
+      console.log("card freeze");
+    });
+  }
+  stopDoubleClick(); 
 
   /********************** picks two cards at once*/
   function collectingTwoCards() {
@@ -41,7 +49,8 @@ $("document").ready(function () {
   function checkForMatch() {
     // checking data of the two cards
     if (
-      $(".wholeCard.flip.selected").first().data("image") === $(".wholeCard.flip.selected").last().data("image")
+      $(".wholeCard.flip.selected").first().data("image") ===
+      $(".wholeCard.flip.selected").last().data("image")
     ) {
       // hides the matching card pair
       toRemoveMatchingCards();
@@ -136,42 +145,42 @@ $("document").ready(function () {
   }
   // ensures order is always random when game is first opened
   mixingUpCards();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-// function forDoubleClicked() {
-//     setTimeout(function() {
-//     $(".wholeCard").addClass("nonFlip");
-//     console.log("it happened");
-// }, 100);
-// }
+  //   function forDoubleClicked() {
+  //     $(".wholeCard").click(function(){
+  //     // setTimeout(function() {
+  //     if($(".wholeCard.flip.selected")){
+  //         $(this).off("click");
+  //         console.log("it happened");
+  //     }else{
+  //         $(this).on("click");
+  //     }
+  //       console.log("it DIDN'T happened");
+  //         // }, 0)
+  // })
+  // }
+  // forDoubleClicked();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // $(".wholeCard").click(function(){
+  //     $(".flip2").off("click");
+  // })
 
   //   function doubleCardClick() {
   //     $(".wholeCard").click(function () {
