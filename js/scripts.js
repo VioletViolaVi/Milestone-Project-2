@@ -24,13 +24,22 @@ $("document").ready(function () {
   }
   flipsCards();
   
-  function stopDoubleClick() {
+  
+  function freezeCard() {
     $(".wholeCard").click(function () {
       $(this).off("click");
       console.log("card freeze");
     });
   }
-  stopDoubleClick(); 
+  freezeCard(); 
+
+  function unFreezeCard() {
+      $(".selected").click(function () {
+          $(".wholeCard").on("click");
+          console.log("card unfreeze");          
+      })
+  }
+  
 
   /********************** picks two cards at once*/
   function collectingTwoCards() {
@@ -40,6 +49,7 @@ $("document").ready(function () {
       // picking two cards
       if ($(".wholeCard.flip.selected").length === 2) {
         checkForMatch();
+        unFreezeCard();
       }
     });
   }
@@ -145,113 +155,4 @@ $("document").ready(function () {
   }
   // ensures order is always random when game is first opened
   mixingUpCards();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  //   function forDoubleClicked() {
-  //     $(".wholeCard").click(function(){
-  //     // setTimeout(function() {
-  //     if($(".wholeCard.flip.selected")){
-  //         $(this).off("click");
-  //         console.log("it happened");
-  //     }else{
-  //         $(this).on("click");
-  //     }
-  //       console.log("it DIDN'T happened");
-  //         // }, 0)
-  // })
-  // }
-  // forDoubleClicked();
-
-  // $(".wholeCard").click(function(){
-  //     $(".flip2").off("click");
-  // })
-
-  //   function doubleCardClick() {
-  //     $(".wholeCard").click(function () {
-  //         $(this).off("click");
-  //         console.log("worked");
-  //     });
-  //   }
-  //   doubleCardClick();
-
-  //   function lockingSingleCard() {
-  //     $(".wholeCard").click(function () {
-  //       $(this).addClass("lock");
-
-  //       let lock = setTimeout(function () {
-  //         if ($(".lock")) {
-  //           $(".lock").off("click");
-  //         }
-  //       }, 300);
-  //     });
-  //   }
-  //   lockingSingleCard();
-
-  //   function unlockingSingleCard() {
-  //     if ($(".wholeCard.flip.lock.clicked")===2) {
-  //       clearTimeout(lockingSingleCard());
-  //       $(".wholeCard.lock").on("click");
-  //     }
-  //   }
-  //   unlockingSingleCard();
-
-  //   function doubleCardClick() {
-  //       $(".wholeCard").click(function () {
-  //       if($(".wholeCard").first().data("number")===$(".wholeCard").first().data("number")){
-  //           $(this).off("click");
-  //           console.log("worked");
-  //       }else{
-  //           console.log("didn't worked");
-  //       }
-  //       })
-  //   }
-  //   doubleCardClick();
-
-  //     function removeDoubleCardClick() {
-  //       $(".wholeCard").click(function () {
-  //           $(".wholeCard").on("click");
-  //           console.log("worked");
-  //       })
-  //   }
-  //   removeDoubleCardClick();
-
-  // function doubleClicked() {
-  // //     if($(".clicked").click(function () {
-  // //         $(this).removeClass("clicked");
-  // //     })){
-
-  // //     }
-  // // }
-  // //   doubleClicked();
-
-  //   function nonFlip() {
-  // //     if ($(".clicked").length === 2) {
-  // //       setTimeout((nonFlip) => {
-  // //         let stop = $(".wholeCard").addClass("nonFlip");
-  // //         console.log(stop);
-  // //       }, 400);
-  // //     }
-  // //   }
-
-  // //   function nonFlipRemoval() {
-  // //     if ($(".clicked").length === 0) {
-  // //       clearTimeout(nonFlip(stop));
-  // //     }
-  // //   }
 });
