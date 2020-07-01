@@ -1,7 +1,8 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
+  // helps prevent adding .selected to unflipped cards so all can be matched
+  let stopFlip = false;
 
-  /********************** begins game*/
   function startGame() {
     // removes start button and modal background when clicked and starts counter
     $("#start").click(function () {
@@ -11,59 +12,60 @@ $("document").ready(function () {
   }
   startGame();
 
-  /********************** turns cards over*/
-  // flips cards when clicked
   $(".wholeCard").click(function () {
+    // helps prevent adding .selected to unflipped cards so all can be matched
+    if (stopFlip) return;
+    // card clicked on can't be flipped again in single turn
     if (!$(this).hasClass("selected")) {
+      // enables remaining cards to be flipped
       $(this).toggleClass("flip");
+      // defines cards to be checked for match
       $(this).addClass("selected");
     }
     collectingTwoCards();
     conditonToMakeEndGameModalAppear();
   });
 
-  /********************** picks two cards at once*/
   function collectingTwoCards() {
-    // picking two cards
+    // picks two cards per turn
     if ($(".wholeCard.flip.selected").length === 2) {
       checkForMatch();
     }
   }
 
-  /********************** checks if cards match*/
   function checkForMatch() {
-    // checking data of the two cards
+    // checks for card match
     if (
       $(".wholeCard.flip.selected").first().data("image") ===
       $(".wholeCard.flip.selected").last().data("image")
     ) {
-      // hides the matching card pair
+      // hides matches
       toRemoveMatchingCards();
     } else {
-      // flips back non matching cards
+      // flips back non matches
       toFlipBackUnmatchedCards();
     }
   }
 
-  /********************** removes matching pairs */
   function toRemoveMatchingCards() {
-    // hides matched cards whilst keeping them in place and removes clicked class so "length === 2" continues to work
+    // keeps cards in place whilst hidden & enables "length === 2" to work
     $(".wholeCard.flip.selected").addClass("invisible").removeClass("selected");
   }
 
-  /********************** flips back non matching pairs */
   function toFlipBackUnmatchedCards() {
-    // cards flip back on their own after a set time
+    // helps prevent adding .selected to unflipped cards so all can be matched
+    stopFlip = true;
+    // cards flip back on their own after set time & enables "length === 2" to work
     setTimeout(function () {
       $(".flip").toggleClass("flip");
+      // helps prevent adding .selected to unflipped cards so all can be matched
+      stopFlip = false;
     }, 600);
-    // removes clicked class so "length === 2" continues to work
     $(".wholeCard.flip.selected").removeClass("selected");
   }
 
-  /********************** countup timer to time length of gameplay */
   function CountUpTimer() {
-    // start time
+    // countup timer from zero
     let timeDuration = 0;
     // ascending counting time
     let countingTime = setInterval(function () {
@@ -78,7 +80,6 @@ $("document").ready(function () {
     });
   }
 
-  /********************** produces end game info */
   function conditonToMakeEndGameModalAppear() {
     if ($(".invisible").length === 12) {
       // shows completed and restart sign
@@ -96,7 +97,6 @@ $("document").ready(function () {
     }
   }
 
-  /********************** restarts game */
   function restartGame() {
     // makes restart button clickable and reset game
     $(".fas.fa-redo-alt").click(function () {
@@ -105,14 +105,13 @@ $("document").ready(function () {
         <div id="score"></div>`);
       // makes cards re-appear once restarted
       $(".wholeCard").removeClass("invisible");
-      // starts timer from beginning again
+      // starts timer from beginning
       clearInterval(CountUpTimer());
       // rearranges cards for every new game play
       mixingUpCards();
     });
   }
 
-  /********************** shuffles cards */
   function mixingUpCards() {
     // brings out <div> children of said class
     let cards = document.querySelector(".cardsContainer");

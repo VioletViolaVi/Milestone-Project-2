@@ -1,6 +1,6 @@
 /********************** sets custom default for all elements */
 * {
-  font-family: 'Pangolin', cursive;
+  font-family: "Pangolin", cursive;
   padding: 0px;
   margin: 0px;
   text-align: center;
@@ -17,8 +17,8 @@ body {
 /*------------------------------------------------------------------------- TITLES -------------------------------------------------------------------------*/
 
 /********************** styles zoo picture */
-#zoo{
-    width: 50%;
+#zoo {
+  width: 50%;
 }
 
 /********************** styles main heading */
@@ -50,7 +50,7 @@ body {
 #start {
   width: 100%;
   border-radius: 10px;
-  background-color:  greenyellow;
+  background-color: greenyellow;
   border: 3px solid darkgreen;
 }
 
@@ -177,12 +177,14 @@ img {
 /* extra large */
 @media (min-width: 1200px) {
   /********************** styles main heading */
-  #title,#completed {
+  #title,
+  #completed {
     font-size: 9vw;
   }
 
   /********************** styles timer */
-  #timer,.fas.fa-redo-alt {
+  #timer,
+  .fas.fa-redo-alt {
     font-size: 5vw;
   }
 
