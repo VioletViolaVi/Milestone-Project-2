@@ -159,7 +159,6 @@ img {
   /********************** styles front and back side of cards */
   .front,
   .back {
-    height: 200px;
     width: 170px;
   }
 } /* medium end */
@@ -169,7 +168,6 @@ img {
   /********************** styles front and back side of cards */
   .front,
   .back {
-    height: 200px;
     width: 200px;
   }
 } /* large end */
