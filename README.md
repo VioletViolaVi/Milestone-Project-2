@@ -113,20 +113,23 @@ The way the time was displayed was changed. The counter was made to count past 5
 
 
 # Testing
-### Markup Validation Service
-The HTML code was copied and pasted into the direct input section of the Markup Validation Service to check for errors. No errors were found.
-### CSS Validation Service
-The CSS code was copied and pasted into the direct input section of CSS Validation Service to check for errors. No errors were found.
-### Chrome Development Tools
-Chrome Development Tools were used to check if the image elements were shuffled upon clicking on the restart button and entering the game’s webpage for the first time.
-They were also used to test if the classes were being added or removed at the required times. For instance, the Elements tab was clicked on and the list of the image elements were inspected. A click event was added to each of these images as they contained the “.wholeCard.flip” classes. Upon clicking on these images, a class called “.selected” was to be added to make the images clicked on contain the “.wholeCard.flip.selected” classes. The element’s section of the Chrome Development Tools were used to check if all three of these classes were added. By testing this and attaining the correct result, the rest of the code was able to proceed by measuring the length of two elements containing all three of these classes and then target them separately. Chrome Development Tools were then used to check if these classes were removed, after the “.data()” pair was checked for a match. If there was a match, the “.hide()” class was added. If not, the “.selected” class was removed. So, Chrome Development Tools was used to ensure the correct classes were added and removed at the correct times in order to eliminate errors and allow the code to continue without any issues occuring.
-### Console.log()
-In the console section of the Chrome Development Tools, “console.log()” was used to ensure functions were being returned and called out. “console.log()” was also used to showcase the values of the declared variables. For example, this included using “console.log(cards)” inside the “mixingUpCards()” function, to show that this was targeting the matching cards in order to mix them up after every gameplay. “console.log()” was also used in conjunction with “typeof()” to identify the type of data the respective code was. All “console.log()” uses were removed from the javaScript page, on completion of this project.  
-### Jasmine Testing
-The stopFlip variable holds the value of the false boolean. stopFlip was tested to check if it was a string using “.tobe(“false”)”. This test failed. Then the variable was tested as a boolean using “expect(stopFlip).toBe(false)”. The test passed, ensuring that the code recognised false as a boolean and not as a string. This enabled the cards to flip only two at a time. 
-### Start and Reset Buttons
-The start button was tested to ensure the background modal and the start button disappears upon clicking on the start button and that the card’s order had been randomised. This was tested by manually clicking on the created start button to see if the “.hide()” jQuery method was applied. The elements tab in the chrome development tools were checked. This test was successful as it was found that an inline CSS style of “display:none;” was added and made the modal and start button disappear.
-The reset button was tested to see if clicking on it re-randomised the cards order when starting the game again. This was checked on chrome development tools where it was found that the elements containing the animals all had changed their previous positions when they reappeared, after the restart button was clicked.
+### Start button & Background Modal
+The HTML code of the background modal and the start button was copied and pasted into the direct input section of the Markup Validation Service to check for errors. No errors were found.
+The CSS code of the background modal and the start button was copied and pasted into the direct input section of the CSS Validation Service to check for errors. No errors were found.
+The size of the background modal and the start button was set at a width of 100%. This was tested using chrome development tools to ensure its responsive design. To make the background modal and the start button fit for mobile screens, chrome development tool’s responsive screen was used to show how they looked at 320px. And to ensure the background modal and the start button’s size was large enough and fit well on larger screen sizes, the responsive screen was incremented at different ascending breakpoints, inspired by Bootstrap. These included: 576px, 768px, 992px and 1200px. Each of these breakpoints were displayed using chrome development tools and had the background modal and the start button’s size shown at each respective breakpoint. The background modal and the start button was at a decent size for all these screen sizes and therefore used for the game.
+The JavaScript code of the background modal and the start button was tested using both the elements and console tabs. Using a function, the start button was made to be clicked on in order to remove both the start button and it’s background modal as well as start the timer for the game. A console.log(“it worked”) was also added to the function so it would appear in the console tab of chrome development tools, had clicking on the start button been successful. So, the start button was clicked on to test it. As a result, the start button disappeared and the background modal was removed as the inline style of “display: none;” became present on the HTML in the elements chrome development tool’s tab. The timer also began counting up. In the console tab of chrome development tool, the string “it worked” also appeared.  
+### Image
+#
+### Title
+#
+### Timer
+#
+### Matching Cards
+#
+### Completed sign
+#
+### Reset button
+#
 
 
 # URL Links
