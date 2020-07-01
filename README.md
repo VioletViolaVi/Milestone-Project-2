@@ -122,8 +122,10 @@ The JavaScript code of the background modal and the start button was tested usin
 The HTML code containing the main image was copied and pasted into the direct input section of the Markup Validation Service to check for errors. No errors were found.
 The CSS code containing the main image was copied and pasted into the direct input section of the CSS Validation Service to check for errors. No errors were found.
 The size of the main image was set at a width of 50%. This was tested using chrome development tools to ensure its responsive design. To make this image fit for mobile screens, chrome development tool’s responsive screen was used to show how it looked at 320px. And to ensure this image was large enough and fit well on larger screen sizes, the responsive screen was incremented at different ascending breakpoints, inspired by Bootstrap. These included: 576px, 768px, 992px and 1200px. Each of these breakpoints were displayed using chrome development tools and had this image shown at each respective breakpoint. The main image was at a decent size for all these screen sizes and therefore used for the game.
-### Title
-#
+### Main Title
+The HTML code containing the main title was copied and pasted into the direct input section of the Markup Validation Service to check for errors. No errors were found.
+The CSS code containing the main title was copied and pasted into the direct input section of the CSS Validation Service to check for errors. No errors were found.
+The size of the main title was set at a font size of 15vw. This was tested using chrome development tools to ensure its responsive design. To make this title fit for mobile screens, chrome development tool’s responsive screen was used to show how it looked at 320px. And to ensure this title was large enough and fit well on larger screen sizes, the responsive screen was incremented at different ascending breakpoints, inspired by Bootstrap. These included: 576px, 768px, 992px and 1200px. Each of these breakpoints were displayed using chrome development tools and had this title shown at each respective breakpoint. The main title was at a decent size for all these screen sizes, except for 1200px. At 1200px, the title had become too large. So a media query was used to decrease the font size to 5vw at 1200px. The responsive screens from chrome development tools were then set at 1200px, to see how the title looked on this screen size. This smaller sized title fit the screen better and therefore was used for the game.
 ### Timer
 #
 ### Matching Cards
