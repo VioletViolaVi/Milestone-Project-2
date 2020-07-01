@@ -1,7 +1,5 @@
 // waits until DOM has been fully loaded
 $("document").ready(function () {
-  // prevents other cards from flipping when two are flipped already
-  let stopFlip = false;
 
   /********************** begins game*/
   function startGame() {
@@ -14,46 +12,23 @@ $("document").ready(function () {
   startGame();
 
   /********************** turns cards over*/
-  function flipsCards() {
-    // flips cards when clicked
-    $(".wholeCard").click(function () {
-      // helps prevents other cards from flipping when two are flipped already
-      if (stopFlip) return;
+  // flips cards when clicked
+  $(".wholeCard").click(function () {
+    if (!$(this).hasClass("selected")) {
       $(this).toggleClass("flip");
-    });
-  }
-  flipsCards();
-  
-  
-  function freezeCard() {
-    $(".wholeCard").click(function () {
-      $(this).off("click");
-      console.log("card freeze");
-    });
-  }
-  freezeCard(); 
-
-  function unFreezeCard() {
-      $(".selected").click(function () {
-          $(".wholeCard").on("click");
-          console.log("card unfreeze");          
-      })
-  }
-  
+      $(this).addClass("selected");
+    }
+    collectingTwoCards();
+    conditonToMakeEndGameModalAppear();
+  });
 
   /********************** picks two cards at once*/
   function collectingTwoCards() {
-    // adds "clicked" class to cards when clicked
-    $(".wholeCard").click(function () {
-      $(this).addClass("selected");
-      // picking two cards
-      if ($(".wholeCard.flip.selected").length === 2) {
-        checkForMatch();
-        unFreezeCard();
-      }
-    });
+    // picking two cards
+    if ($(".wholeCard.flip.selected").length === 2) {
+      checkForMatch();
+    }
   }
-  collectingTwoCards();
 
   /********************** checks if cards match*/
   function checkForMatch() {
@@ -73,18 +48,14 @@ $("document").ready(function () {
   /********************** removes matching pairs */
   function toRemoveMatchingCards() {
     // hides matched cards whilst keeping them in place and removes clicked class so "length === 2" continues to work
-    $(".wholeCard.flip.selected").addClass("hide").removeClass("selected");
+    $(".wholeCard.flip.selected").addClass("invisible").removeClass("selected");
   }
 
   /********************** flips back non matching pairs */
   function toFlipBackUnmatchedCards() {
-    // helps prevents other cards from flipping when two are flipped already
-    stopFlip = true;
     // cards flip back on their own after a set time
     setTimeout(function () {
       $(".flip").toggleClass("flip");
-      // helps prevents other cards from flipping when two are flipped already
-      stopFlip = false;
     }, 600);
     // removes clicked class so "length === 2" continues to work
     $(".wholeCard.flip.selected").removeClass("selected");
@@ -101,7 +72,7 @@ $("document").ready(function () {
     }, 1000);
     // stops counting when all cards are matched
     $(".wholeCard").click(function () {
-      if ($(".hide").length === 12) {
+      if ($(".invisible").length === 12) {
         clearInterval(countingTime);
       }
     });
@@ -109,24 +80,21 @@ $("document").ready(function () {
 
   /********************** produces end game info */
   function conditonToMakeEndGameModalAppear() {
-    $(".wholeCard").click(function () {
-      if ($(".hide").length === 12) {
-        // shows completed and restart sign
-        setTimeout(function () {
-          $("#score").replaceWith(`
+    if ($(".invisible").length === 12) {
+      // shows completed and restart sign
+      setTimeout(function () {
+        $("#score").replaceWith(`
         <div id="endGame">
             <h1 id="completed">Completed</h1>
             <i class="fas fa-redo-alt"></i>
         </div>`);
-          // allows game to restart when its button is clicked
-          restartGame();
-          // prevents animal images being seen when restarted
-          $(".wholeCard").removeClass("flip");
-        }, 600);
-      }
-    });
+        // allows game to restart when its button is clicked
+        restartGame();
+        // prevents animal images being seen when restarted
+        $(".wholeCard").removeClass("flip");
+      }, 600);
+    }
   }
-  conditonToMakeEndGameModalAppear();
 
   /********************** restarts game */
   function restartGame() {
@@ -136,7 +104,7 @@ $("document").ready(function () {
       $("#endGame").replaceWith(`
         <div id="score"></div>`);
       // makes cards re-appear once restarted
-      $(".wholeCard").removeClass("hide");
+      $(".wholeCard").removeClass("invisible");
       // starts timer from beginning again
       clearInterval(CountUpTimer());
       // rearranges cards for every new game play

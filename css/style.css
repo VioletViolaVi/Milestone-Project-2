@@ -130,13 +130,8 @@ img {
   transform: rotateY(180deg);
 }
 
-/********************** to stop cards from flipping once 2 have been selected */
-.stopFlip{
-    transform: rotateY(0deg);
-}
-
 /********************** to remove matching cards */
-.hide {
+.invisible {
   visibility: hidden;
 }
 
