@@ -14,24 +14,7 @@ body {
   background: rgb(15, 250, 15);
 }
 
-/*------------------------------------------------------------------------- TITLES -------------------------------------------------------------------------*/
-
-/********************** styles zoo picture */
-#zoo {
-  width: 40%;
-}
-
-/********************** styles main heading */
-#title {
-  font-size: 15vw;
-}
-
-/********************** styles timer title */
-#timer {
-  font-size: 10vw;
-}
-
-/*------------------------------------------------------------------------- MODAL -------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------- START MODAL -------------------------------------------------------------------------*/
 
 /********************** provides underlay for modal */
 .modalBackground {
@@ -64,16 +47,29 @@ body {
   font-size: 7vw;
 }
 
+/*------------------------------------------------------------------------- TITLES -------------------------------------------------------------------------*/
+
+/********************** styles zoo picture */
+#zoo {
+  width: 40%;
+}
+
+/********************** styles main heading and completed sign */
+#title,
+#completed {
+  font-size: 15vw;
+}
+
+/********************** styles timer title and reset button */
+#timer,
+.fas.fa-redo-alt {
+  font-size: 10vw;
+}
+
 /********************** styles completed sign */
 #completed {
   margin-top: 100px;
-  font-size: 18vw;
   margin-bottom: 15px;
-}
-
-/********************** styles reset button */
-.fas.fa-redo-alt {
-  font-size: 15vw;
 }
 
 /*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
@@ -154,13 +150,15 @@ img {
   #start p {
     font-size: 5vw;
   }
-  /********************** styles main heading */
-  #title {
+  /********************** styles main heading and completed sign */
+  #title,
+  #completed {
     font-size: 10vw;
   }
 
-  /********************** styles timer */
-  #timer {
+  /********************** styles timer and reset button */
+  #timer,
+  .fas.fa-redo-alt {
     font-size: 5vw;
   }
 
@@ -189,8 +187,9 @@ img {
   #zoo {
     width: 30%;
   }
-  /********************** styles main heading */
-  #title {
+  /********************** styles main heading and completed sign */
+  #title,
+  #completed {
     font-size: 8vw;
   }
 
@@ -207,8 +206,9 @@ img {
   #zoo {
     width: 20%;
   }
-  /********************** styles main heading */
-  #title {
+  /********************** styles main heading and completed sign */
+  #title,
+  #completed {
     font-size: 6vw;
   }
   /********************** styles front and back side of cards */
@@ -222,19 +222,8 @@ img {
 @media (min-width: 1200px) {
   /********************** styles zoo picture */
   #zoo {
-    width: 20%;
+    width: 15%;
   }
-  /********************** styles completed sign */
-  #completed {
-    font-size: 9vw;
-  }
-
-  /********************** styles timer */
-  #timer,
-  .fas.fa-redo-alt {
-    font-size: 5vw;
-  }
-
   /********************** styles front and back side of cards */
   .front,
   .back {
