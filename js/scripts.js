@@ -105,10 +105,9 @@ $("document").ready(function () {
         <div id="score"></div>`);
       // makes cards re-appear once restarted
       $(".wholeCard").removeClass("invisible");
-      // starts timer from beginning
-      clearInterval(CountUpTimer());
       // rearranges cards for every new game play
       mixingUpCards();
+      CountUpTimer();
     });
   }
 

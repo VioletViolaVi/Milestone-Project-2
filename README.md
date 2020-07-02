@@ -113,6 +113,8 @@ The way the time was displayed was changed. The counter was made to count past 5
 
 
 # Testing
+### Click Events
+The click event was applied to the start button, matching cards and the reset button. These were tested by playing through the game and clicking on these features to ensure they were clickable at the correct times. For instance, the start button was clicked on to check to see if it would be removed and start the timer; which it did upon testing. The matching cards were clicked on to ensure they flipped over to show the animal images and then flip back when they didn’t match or disappear when they did. The click event was also tested to ensure the rest of the cards couldn’t be clicked on whenever two cards had been shown already. This was done by clicking on a third and fourth card before the two animal images were removed. The results of this test showed that it wasn’t possible to click and flip over another card until the first two had been dealt with via the if condition. After all the cards had been matched, the restart button was tested by being clicked. Upon doing so, the timer restarted and the cards re-appeared shuffled for the user to start the game again.  
 ### Start button & Background Modal
 The HTML code of the background modal and the start button was copied and pasted into the direct input section of the Markup Validation Service to check for errors. No errors were found.
 The CSS code of the background modal and the start button was copied and pasted into the direct input section of the CSS Validation Service to check for errors. No errors were found.
