@@ -36,7 +36,6 @@ This project is about creating a card matching game using cartoon pictures of zo
 
 
 # Wireframe and Final Game Differences
-
 For the final finished game product, an image of a group of cartoon zoo animals was added at the top of the game’s webpage. This was added because it was important to ensure that the user could quickly understand what the game was about and avoid confusion. 
 
 The word “Timer” was changed to “Time” as it was more reflective on what was happening in the game. As the time shown was counting up in ascending order, using “Timer” became less accurate as it was not counting down a restricted length period. So “Time” was used to provide more accuracy. It was also better at displaying the time as a score that users got on completion of the game.
@@ -72,7 +71,7 @@ The way the time was displayed was changed. The counter was made to count past 5
 #### Restart button
 - A restart button symbol is shown at the same time as the “Completed!” title. This allows the user to know that they have the option of playing again by clicking on it. The restart button will covertly re-randomise the card’s order and reset the counter back to zero. This button is an easy and convenient way for the user to play the game again.   
 #### Colours
-- The colours used for this game were: rgba(0, 0, 0, 0.63), brown, rgb(15, 250, 15), green-yellow and dark-green. The colour rgba(0, 0, 0, 0.63) was used for the modal, to help make the start button stand out clearly to the user. Brown, rgb(15, 250, 15), green-yellow and dark-green were used to make the game resemble the colours of a jungle theme in order to match the fact that zoo animals were being used.
+- The colours used for this game were: rgba(0, 0, 0, 0.527), brown, rgb(15, 250, 15), green-yellow and dark-green. The colour rgba(0, 0, 0, 0.527) was used for the modal, to help make the start button stand out clearly to the user. Brown, rgb(15, 250, 15), green-yellow and dark-green were used to make the game resemble the colours of a jungle theme in order to match the fact that zoo animals were being used.
 #### Font
 - The Pangolin font was used to add style to the design of the game. It was also used because the font is legible so users would have no difficulty reading any of the text present. 
 
