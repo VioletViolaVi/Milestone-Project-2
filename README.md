@@ -40,13 +40,13 @@ For the final finished game product, an image of a group of cartoon zoo animals 
 
 The word “Timer” was changed to “Time” as it was more reflective on what was happening in the game. As the time shown was counting up in ascending order, using “Timer” became less accurate as it was not counting down a restricted length period. So “Time” was used to provide more accuracy. It was also better at displaying the time as a score that users got on completion of the game.
 
+The way the time was displayed was changed. The counter was made to count past 59 seconds without the use of a digital clock. This was done because the time shown after completing the game was also used to show the user’s score. Therefore, allowing the time to be displayed as a whole number past 59 was a better option.
+
 The number of cards used for the game was reduced from 40 to 12. This was done to prevent losing the interest of the users. By having a lower number of cards used, the user would receive rapid entertainment when they were successful in finding all matches, which would happen quickly due to the fewer cards. This would help users become more excited, making them want to play again.  
 
 The opening modal was changed to one button labeled “Start” with a brief description underneath informing the user that pressing this button would start the game. This was changed so the user would have more information on how to play the game.
 
 The closing modal was also edited. The time was moved to be above the “Completed” sign so that the sign could be in clear centre view of the user. The restart button was also changed to a symbol. This was done so it would take up less space and be easily read by more users as its symbol is universally known to mean restart. 
-
-The way the time was displayed was changed. The counter was made to count past 59 seconds without the use of a digital clock. This was done because the time shown after completing the game was also used to show the user’s score. Therefore, allowing the time to be displayed as a whole number past 59 was a better option.
 
 
 # Features
