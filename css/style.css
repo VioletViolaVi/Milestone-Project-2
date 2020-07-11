@@ -54,9 +54,10 @@ body {
   width: 40%;
 }
 
-/********************** styles main heading and completed sign */
+/********************** styles main heading, completed and highscore sign*/
 #title,
-#completed {
+#completed,
+#highScore {
   font-size: 15vw;
 }
 
@@ -66,12 +67,12 @@ body {
   font-size: 10vw;
 }
 
-/********************** styles completed sign */
-#completed {
-  margin-top: 100px;
-  margin-bottom: 15px;
+/********************** spaces out reset button, highscore and completed sign */
+#highScore,
+#completed,
+.fas.fa-redo-alt {
+  margin-top: 20px;
 }
-
 /*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
 
 /********************** adds style to flip*/
@@ -150,9 +151,10 @@ img {
   #start p {
     font-size: 5vw;
   }
-  /********************** styles main heading and completed sign */
+  /********************** styles main heading, completed and highscore sign*/
   #title,
-  #completed {
+  #completed,
+  #highScore {
     font-size: 10vw;
   }
 
@@ -187,9 +189,10 @@ img {
   #zoo {
     width: 30%;
   }
-  /********************** styles main heading and completed sign */
+  /********************** styles main heading, completed and highscore sign*/
   #title,
-  #completed {
+  #completed,
+  #highScore {
     font-size: 8vw;
   }
 
@@ -206,9 +209,10 @@ img {
   #zoo {
     width: 20%;
   }
-  /********************** styles main heading and completed sign */
+  /********************** styles main heading, completed and highscore sign*/
   #title,
-  #completed {
+  #completed,
+  #highScore {
     font-size: 6vw;
   }
   /********************** styles front and back side of cards */

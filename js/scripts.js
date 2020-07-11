@@ -6,12 +6,11 @@ $("document").ready(function () {
   function startGame() {
     // removes start button and modal background when clicked and starts counter
     $("#start").click(function () {
-      CountUpTimer();
+      countUpTimer();
       $(".modalBackground").hide();
     });
   }
   startGame();
-
   $(".wholeCard").click(function () {
     // helps prevent adding .selected to unflipped cards so all can be matched
     if (stopFlip) return;
@@ -63,19 +62,30 @@ $("document").ready(function () {
     }, 600);
     $(".wholeCard.flip.selected").removeClass("selected");
   }
+  // var timeDuration = 0;
 
-  function CountUpTimer() {
+  function countUpTimer() {
     // countup timer from zero
     let timeDuration = 0;
-    // ascending counting time
+    // rate numbers are counted & by how much they are incremented
     let countingTime = setInterval(function () {
-      $("#timer").html(`Time: ${timeDuration}`);
       timeDuration += 1;
+      $("#timer").html(`Time: ${timeDuration}`);
     }, 1000);
     // stops counting when all cards are matched
     $(".wholeCard").click(function () {
       if ($(".invisible").length === 12) {
         clearInterval(countingTime);
+        $("#highScore").html(`High Score: ${timeDuration}`).hide();
+        if (localStorage.getItem("fastestTime") === null) {
+          let setItem = localStorage.setItem("fastestTime", timeDuration);
+        } else {
+          let getItem = parseInt(localStorage.getItem("fastestTime"));
+          let bestTime = Math.min(getItem, timeDuration);
+          let setItem = localStorage.setItem("fastestTime", bestTime);
+          $("#highScore").html(`High Score: ${bestTime}`).hide();
+        }
+        $("#highScore").show();
       }
     });
   }
@@ -84,9 +94,9 @@ $("document").ready(function () {
     if ($(".invisible").length === 12) {
       // shows completed and restart sign
       setTimeout(function () {
-        $("#score").replaceWith(`
+        $("#gameOver").replaceWith(`
         <div id="endGame">
-            <h1 id="completed">Completed</h1>
+            <h2 id="completed">Completed</h2>
             <i class="fas fa-redo-alt"></i>
         </div>`);
         // allows game to restart when its button is clicked
@@ -102,12 +112,13 @@ $("document").ready(function () {
     $(".fas.fa-redo-alt").click(function () {
       // ensures restart symbol is always shown after game play
       $("#endGame").replaceWith(`
-        <div id="score"></div>`);
+        <div id="gameOver"></div>`);
       // makes cards re-appear once restarted
       $(".wholeCard").removeClass("invisible");
       // rearranges cards for every new game play
       mixingUpCards();
-      CountUpTimer();
+      countUpTimer();
+      $("#highScore").hide();
     });
   }
 
