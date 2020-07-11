@@ -76,10 +76,12 @@ $("document").ready(function () {
     $(".wholeCard").click(function () {
       if ($(".invisible").length === 12) {
         clearInterval(countingTime);
-        $("#highScore").html(`High Score: ${timeDuration}`).hide();
+        // shows current time as high score  
         if (localStorage.getItem("fastestTime") === null) {
           let setItem = localStorage.setItem("fastestTime", timeDuration);
+        $("#highScore").html(`High Score: ${timeDuration}`).hide();  
         } else {
+          // compares then shows lower time as high score
           let getItem = parseInt(localStorage.getItem("fastestTime"));
           let bestTime = Math.min(getItem, timeDuration);
           let setItem = localStorage.setItem("fastestTime", bestTime);
