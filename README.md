@@ -51,21 +51,21 @@ The closing modal was also edited. The time was moved to be above the “Complet
 
 # Features
 ### Existing Features
-#### Modal
-- A modal was added to be shown at the start of this game. The modal acts as a placeholder for the start button. It makes it visually clear to the user that they are about to begin the game and therefore should get ready.
 #### Start Button
 - The start button was added and placed inside as part of the game’s modal. Clicking this button starts the game as well as the timer. This button was placed in the centre to be in clear view of the user. A brief explanation on what will happen once the button is clicked and how to play the game was provided to help the user.
+#### Modal
+- A modal was added to be shown at the start of this game. The modal acts as a placeholder for the start button. It makes it visually clear to the user that they are about to begin the game and therefore should get ready.
 #### Logo Image
 - The image seen at the top of the webpage is a group of cartoon zoo animals. This acts as the logo for the game. It gives the user an indication on what images they should expect to see when they click on the cards.
 #### Opening Title
 - The beginning title, “Sadie’s Zoo”, is a short and clear explanation on what the game is about. This helps maintain the user’s interest as they are not bombarded with information at the start that would make them not want to play the game. As a result, they are more likely to further engage with this activity.
+#### Timer
+- The timer displays a counter that counts from zero at the start of the game. It shows the amount of time the user used to complete the card matching game. This counter counts in ascending order until the game is completed. If the game is restarted, the counter reverts back to zero and counts again. 
+- The timer also acts as a score. As it shows the user how much time they took, it makes them want to try again and see if they can complete the game quicker.
 #### Cards
 - The cards each hold two images. Before they are clicked on and flipped, all the cards are seen with a question mark image on them. After the cards are clicked on and flipped, each card is shown to have an image of a cartoon zoo animal. 
 - Every two cards has a picture of the same zoo animal. This is so the user will be able to find a pair of cards that match with the same zoo animal on them. Once a pair has been found, the cards will disappear. If not, they will flip back to displaying their question mark image side. 
 - All the cards are seen with a question mark image first because they all need to look the same to challenge the user into finding the correct animal image pairs.
-#### Timer
-- The timer displays a counter that counts from zero at the start of the game. It shows the amount of time the user used to complete the card matching game. This counter counts in ascending order until the game is completed. If the game is restarted, the counter reverts back to zero and counts again. 
-- The timer also acts as a score. As it shows the user how much time they took, it makes them want to try again and see if they can complete the game quicker.
 #### Closing Title
 - A “Completed!” title is displayed once all the cards have been matched. This informs the user that they have successfully reached the end of the game. 
 #### Restart Button
