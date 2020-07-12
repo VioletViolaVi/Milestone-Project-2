@@ -168,6 +168,57 @@ The closing modal was also edited. The time was moved to be above the “Complet
 
 - The project used Stack Overflow to provide information on the randomisation of cards for this project.
 
+### Jasmine Testing
+
+- The project used Jasmine Testing to test the use of booleans for this project.
+
+# URL Links
+
+The following links, from the third party websites, were used to create this project:
+
+### Free SVG
+
+- Mallard
+  - https://freesvg.org/14thwarrior-cartoon-mallard
+- Owl
+  - https://freesvg.org/lemmling-cartoon-owl
+- Peafowl
+  - https://freesvg.org/studiofibonacci-cartoon-peacock
+- Question mark
+  - https://freesvg.org/vector-image-of-primary-question-mark-black-and-white-icon
+
+### Clipart-Library
+
+- Elephant
+  - http://clipart-library.com/clipart/pkT8ERRir.htm
+- Giraffe
+  - http://clipart-library.com/clipart/p6iyk8bcn.htm
+- Zebra
+  - http://clipart-library.com/clipart/8cEjyrkKi.htm
+- Zoo
+  - http://clipart-library.com/clipart/292862.htm
+
+### Font Awesome
+
+- Restart icon
+  - https://fontawesome.com/icons/redo-alt?style=solid
+
+### Google Fonts
+
+- https://fonts.google.com/specimen/Heebo?query=heebo&selection.family=Heebo
+
+### jQuery
+
+- https://jquery.com/download/
+
+### Stack Overflow
+
+- https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
+
+### Jasmine Testing
+
+- https://cdnjs.com/libraries/jasmine
+
 # Testing
 
 ### DOM
@@ -257,49 +308,6 @@ The elements tab of the chrome development tools also showed the respective clas
 The user stories were tested to see if they were all met. The first user story was tested by assigning multiple participants to play through the game without the use of the chrome development tools. This was to prevent showing any information, e.g. displaying the location of each animal card, that may enable the participants to cheat. The participants were interviewed on how easy they found navigating through the game. All of them expressed that it was easy to understand how to play the game and had no issues doing so.
 The second user story was tested by informing the participants to identify the amount of time they took completing the game, based on the timer provided. All the users were able to find where in the game the amount of time being taken was being displayed and become aware of how long they took to complete the game.
 The third user story was tested by tasking the participants to replay the game and attempt to beat their previous time. This led to all the participants clicking/tapping on the restart button, which shuffled the card’s order to play the game again, not knowing where the animal images were located. After playing the game again, the participants were asked about how they felt trying to match the cards at a faster rate. All of them responded that they really enjoyed the challenge. A few were even happy as they were able to outperform their previous time.
-
-# URL Links
-
-The following links, from the third party websites, were used to create this project:
-
-### Free SVG
-
-- Mallard
-  - https://freesvg.org/14thwarrior-cartoon-mallard
-- Owl
-  - https://freesvg.org/lemmling-cartoon-owl
-- Peafowl
-  - https://freesvg.org/studiofibonacci-cartoon-peacock
-- Question mark
-  - https://freesvg.org/vector-image-of-primary-question-mark-black-and-white-icon
-
-### Clipart-Library
-
-- Elephant
-  - http://clipart-library.com/clipart/pkT8ERRir.htm
-- Giraffe
-  - http://clipart-library.com/clipart/p6iyk8bcn.htm
-- Zebra
-  - http://clipart-library.com/clipart/8cEjyrkKi.htm
-- Zoo
-  - http://clipart-library.com/clipart/292862.htm
-
-### Font Awesome
-
-- Restart icon
-  - https://fontawesome.com/icons/redo-alt?style=solid
-
-### Google Fonts
-
-- https://fonts.google.com/specimen/Heebo?query=heebo&selection.family=Heebo
-
-### jQuery
-
-- https://jquery.com/download/
-
-### Stack Overflow
-
-- https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
 
 # Deployment
 
