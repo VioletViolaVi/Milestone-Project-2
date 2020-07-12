@@ -44,6 +44,8 @@ The way the time was displayed was changed. The counter was made to count past 5
 
 The number of cards used for the game was reduced from 40 to 12. This was done to prevent losing the interest of the users. By having a lower number of cards used, the user would receive rapid entertainment when they were successful in finding all matches, which would happen quickly due to the fewer cards. This would help users become more excited, making them want to play again.  
 
+A high score section was added to the game. This was to allow the user to see how well they fared in the amount of time they spent matching all the cards. It felt important to add a high score element to the game because it was a good way to keep user’s interested; making them want to keep playing to beat their own best score.
+
 The opening modal was changed to one button labeled “Start” with a brief description underneath informing the user that pressing this button would start the game. This was changed so the user would have more information on how to play the game.
 
 The closing modal was also edited. The time was moved to be above the “Completed” sign so that the sign could be in clear centre view of the user. The restart button was also changed to a symbol. This was done so it would take up less space and be easily read by more users as its symbol is universally known to mean restart. 
