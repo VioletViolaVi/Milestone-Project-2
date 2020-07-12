@@ -61,7 +61,7 @@ body {
   font-size: 15vw;
 }
 
-/********************** styles timer title and reset button */
+/********************** styles timer and reset button */
 #timer,
 .fas.fa-redo-alt {
   font-size: 10vw;

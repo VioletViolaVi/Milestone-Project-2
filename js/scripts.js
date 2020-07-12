@@ -3,14 +3,6 @@ $("document").ready(function () {
   // helps prevent adding .selected to unflipped cards so all can be matched
   let stopFlip = false;
 
-  function startGame() {
-    // removes start button and modal background when clicked and starts counter
-    $("#start").click(function () {
-      countUpTimer();
-      $(".modalBackground").hide();
-    });
-  }
-  startGame();
   $(".wholeCard").click(function () {
     // helps prevent adding .selected to unflipped cards so all can be matched
     if (stopFlip) return;
@@ -24,6 +16,15 @@ $("document").ready(function () {
     collectingTwoCards();
     conditonToMakeEndGameModalAppear();
   });
+
+  function startGame() {
+    // removes start button and modal background when clicked and starts counter
+    $("#start").click(function () {
+      countUpTimer();
+      $(".modalBackground").hide();
+    });
+  }
+  startGame();
 
   function collectingTwoCards() {
     // picks two cards per turn
@@ -62,7 +63,6 @@ $("document").ready(function () {
     }, 600);
     $(".wholeCard.flip.selected").removeClass("selected");
   }
-  // var timeDuration = 0;
 
   function countUpTimer() {
     // countup timer from zero
@@ -76,10 +76,10 @@ $("document").ready(function () {
     $(".wholeCard").click(function () {
       if ($(".invisible").length === 12) {
         clearInterval(countingTime);
-        // shows current time as high score  
+        // shows current time as high score
         if (localStorage.getItem("fastestTime") === null) {
           let setItem = localStorage.setItem("fastestTime", timeDuration);
-        $("#highScore").html(`High Score: ${timeDuration}`).hide();  
+          $("#highScore").html(`High Score: ${timeDuration}`).hide();
         } else {
           // compares then shows lower time as high score
           let getItem = parseInt(localStorage.getItem("fastestTime"));
@@ -110,7 +110,7 @@ $("document").ready(function () {
   }
 
   function restartGame() {
-    // makes restart button clickable and reset game
+    // makes restart button clickable and resets game
     $(".fas.fa-redo-alt").click(function () {
       // ensures restart symbol is always shown after game play
       $("#endGame").replaceWith(`

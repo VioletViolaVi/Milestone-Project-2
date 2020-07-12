@@ -1,116 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Sadie's Zoo</title>
     <!-- Font Awesome link-->
-    <script src="https://kit.fontawesome.com/bfcbb8f6a3.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/bfcbb8f6a3.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Google fonts link-->
-    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
     <!-- jQuery CDN link-->
-	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-</head>
-<body>
-
-
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="modalBackground">
-        <div id="start">
-            <h1>Start!</h1> 
-            <p>Press here to start matching memory cards</p>
-        </div>  
+      <div id="start">
+        <h1>Start!</h1>
+        <p>Press here to start matching memory cards</p>
+      </div>
     </div>
 
+    <!-- image taken from clipart library -->
+    <div>
+      <img id="zoo" src="img/zoo.png" alt="A cartoon picture of a zoo." />
+      <h1 id="title">Sadie's Zoo</h1>
+    </div>
 
     <div>
-        <img id="zoo" src="img/zoo.png" alt="A cartoon picture of a zoo.">
-        <h1 id="title">Sadie's Zoo</h1>
+      <h2 id="timer"></h2>
+      <h2 id="highScore"></h2>
+      <h2 id="gameOver"></h2>
     </div>
 
-
-    <div>
-        <h2 id="timer"></h2>
-        <h2 id="highScore"></h2>     
-        <h2 id="gameOver"></h2>
-    </div>
-
-
-<!-- images taken from clipart library and free svg -->
+    <!-- images taken from clipart library and free svg -->
     <section class="decorativeFlip">
-        <div class="cardsContainer">
-
-<!-- first set -->
-            <div class="wholeCard" data-image="elephant">
-                <img class="front" src="img/elephant.png" alt="A cartoon picture of an elephant."> 
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div>
-
-            <div class="wholeCard" data-image="giraffe">
-                <img class="front" src="img/giraffe.png" alt="A cartoon picture of a giraffe.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div>
-
-            <div class="wholeCard" data-image="mallard">
-                <img class="front" src="img/mallard.png" alt="A cartoon picture of a mallard.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div>    
-
-            <div class="wholeCard" data-image="owl">
-                <img class="front" src="img/owl.png" alt="A cartoon picture of an owl.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div> 
-
-            <div class="wholeCard" data-image="peafowl">
-                <img class="front" src="img/peafowl.png" alt="A cartoon picture of a peafowl.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div> 
-
-            <div class="wholeCard" data-image="zebra">
-                <img class="front" src="img/zebra.png" alt="A cartoon picture of a zebra.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div> 
-
- <!-- second set -->
-            <div class="wholeCard" data-image="elephant">
-                <img class="front" src="img/elephant.png" alt="A cartoon picture of an elephant."> 
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div>
-
-            <div class="wholeCard" data-image="giraffe">
-                <img class="front" src="img/giraffe.png" alt="A cartoon picture of a giraffe.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div>
-
-            <div class="wholeCard" data-image="mallard">
-                <img class="front" src="img/mallard.png" alt="A cartoon picture of a mallard.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div>    
-
-            <div class="wholeCard" data-image="owl">
-                <img class="front" src="img/owl.png" alt="A cartoon picture of an owl.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div> 
-
-            <div class="wholeCard" data-image="peafowl">
-                <img class="front" src="img/peafowl.png" alt="A cartoon picture of a peafowl.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div> 
-
-            <div class="wholeCard" data-image="zebra">
-                <img class="front" src="img/zebra.png" alt="A cartoon picture of a zebra.">
-                <img class="back" src="img/question-mark.png" alt="A picture of a question mark."> 
-            </div> 
-
-
+      <div class="cardsContainer">
+        <!-- first set -->
+        <div class="wholeCard" data-image="elephant">
+          <img
+            class="front"
+            src="img/elephant.png"
+            alt="A cartoon picture of an elephant."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
         </div>
-          
 
-    </section>  
+        <div class="wholeCard" data-image="giraffe">
+          <img
+            class="front"
+            src="img/giraffe.png"
+            alt="A cartoon picture of a giraffe."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
 
+        <div class="wholeCard" data-image="mallard">
+          <img
+            class="front"
+            src="img/mallard.png"
+            alt="A cartoon picture of a mallard."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="owl">
+          <img
+            class="front"
+            src="img/owl.png"
+            alt="A cartoon picture of an owl."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="peafowl">
+          <img
+            class="front"
+            src="img/peafowl.png"
+            alt="A cartoon picture of a peafowl."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="zebra">
+          <img
+            class="front"
+            src="img/zebra.png"
+            alt="A cartoon picture of a zebra."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <!-- second set -->
+        <div class="wholeCard" data-image="elephant">
+          <img
+            class="front"
+            src="img/elephant.png"
+            alt="A cartoon picture of an elephant."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="giraffe">
+          <img
+            class="front"
+            src="img/giraffe.png"
+            alt="A cartoon picture of a giraffe."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="mallard">
+          <img
+            class="front"
+            src="img/mallard.png"
+            alt="A cartoon picture of a mallard."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="owl">
+          <img
+            class="front"
+            src="img/owl.png"
+            alt="A cartoon picture of an owl."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="peafowl">
+          <img
+            class="front"
+            src="img/peafowl.png"
+            alt="A cartoon picture of a peafowl."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+
+        <div class="wholeCard" data-image="zebra">
+          <img
+            class="front"
+            src="img/zebra.png"
+            alt="A cartoon picture of a zebra."
+          />
+          <img
+            class="back"
+            src="img/question-mark.png"
+            alt="A picture of a question mark."
+          />
+        </div>
+      </div>
+    </section>
 
     <script src="js/scripts.js"></script>
-    
-</body>
+  </body>
 </html>
