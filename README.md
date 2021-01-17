@@ -22,18 +22,18 @@ This project is about creating a card matching game using cartoon pictures of zo
 
 # Sadie’s Zoo Wireframes
 
-<img src="wireframes/img/1.mobile.PNG" alt="Screenshot of how the game looks on a mobile before starting.">
-<img src="wireframes/img/2.mobile.PNG" alt="Screenshot of how the game looks on a mobile with no card matches.">
-<img src="wireframes/img/3.mobile.PNG" alt="Screenshot of how the game looks on a mobile and with a card match.">
-<img src="wireframes/img/4.mobile.PNG" alt="Screenshot of how the game looks on a mobile once completed, with the user's time spent and a restart button.">
-<img src="wireframes/img/5.tablet.PNG" alt="Screenshot of how the game looks on a tablet before starting.">
-<img src="wireframes/img/6.tablet.PNG" alt="Screenshot of how the game looks on a tablet with no card matches.">
-<img src="wireframes/img/7.tablet.PNG" alt="Screenshot of how the game looks on a tablet with a card match.">
-<img src="wireframes/img/8.tablet.PNG" alt="Screenshot of how the game looks on a tablet once completed, with the user's time spent and a restart button.">
-<img src="wireframes/img/9.desktop.PNG" alt="Screenshot of how the game looks on a desktop before starting..">
-<img src="wireframes/img/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches..">
-<img src="wireframes/img/11.desktop.PNG" alt="Screenshot of how the game looks on a desktop with a card match.">
-<img src="wireframes/img/12.desktop.PNG" alt="Screenshot of how the game looks on a desktop once completed, with the user's time spent and a restart button.">
+<img src="assets/wireframes/img/1.mobile.PNG" alt="Screenshot of how the game looks on a mobile before starting.">
+<img src="assets/wireframes/img/2.mobile.PNG" alt="Screenshot of how the game looks on a mobile with no card matches.">
+<img src="assets/wireframes/img/3.mobile.PNG" alt="Screenshot of how the game looks on a mobile and with a card match.">
+<img src="assets/wireframes/img/4.mobile.PNG" alt="Screenshot of how the game looks on a mobile once completed, with the user's time spent and a restart button.">
+<img src="assets/wireframes/img/5.tablet.PNG" alt="Screenshot of how the game looks on a tablet before starting.">
+<img src="assets/wireframes/img/6.tablet.PNG" alt="Screenshot of how the game looks on a tablet with no card matches.">
+<img src="assets/wireframes/img/7.tablet.PNG" alt="Screenshot of how the game looks on a tablet with a card match.">
+<img src="assets/wireframes/img/8.tablet.PNG" alt="Screenshot of how the game looks on a tablet once completed, with the user's time spent and a restart button.">
+<img src="assets/wireframes/img/9.desktop.PNG" alt="Screenshot of how the game looks on a desktop before starting..">
+<img src="assets/wireframes/img/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches..">
+<img src="assets/wireframes/img/11.desktop.PNG" alt="Screenshot of how the game looks on a desktop with a card match.">
+<img src="assets/wireframes/img/12.desktop.PNG" alt="Screenshot of how the game looks on a desktop once completed, with the user's time spent and a restart button.">
 
 # Wireframe and Final Game Differences
 
@@ -256,7 +256,7 @@ The HTML code of the timer was copied and pasted into the direct input section o
 The CSS code of the timer was copied and pasted into the direct input section of the CSS Validation Service to check for errors. No errors were found.
 The size of the timer was set at a font size of 10vw. This was tested using chrome development tools to ensure its responsive design. To make this timer fit for mobile screens, chrome development tools’ responsive screen was used to show how it looked at 320px. And to ensure this timer was large enough and fit well on larger screen sizes, the responsive screen was incremented at different ascending breakpoints, inspired by Bootstrap. These included: 576px, 768px, 992px and 1200px. Each of these breakpoints were displayed using chrome development tools and had the timer shown at each respective breakpoint. The timer was tested as being too large for screen sizes from 576px onwards. Therefore, it was decreased as the screen sizes became bigger. The responsive screens from chrome development tools were used to see how the title looked at each of these breakpoints. These
 smaller sizes fitted the screens better and therefore were used for the game.
-The JavaScript/jQuery code of the timer was tested using both the elements and console tabs of the chrome development tools. Using a function, the timer was arranged to appear after the start button was clicked. A setInterval was used to make the timer start counting upwards one second at a time at a steady pace. A console.log(“it worked”) was added to the function and then called out so it would appear in the console tab of chrome development tools if it was working properly. To make sure that it was, the start button was clicked and the console tab was checked. The string “it worked” had appeared in the console tab. In addition, the id that had been assigned to this timer showed up in the HTML portion of the elements tab, with the time increatmenting at the same rate as the game. The timer also appeared under the main title of the game and began incrementing one second at a time, upon clicking the start button.
+The JavaScript/jQuery code of the timer was tested using both the elements and console tabs of the chrome development tools. Using a function, the timer was arranged to appear after the start button was clicked. A setInterval was used to make the timer start counting upwards one second at a time at a steady pace. A console.log(“it worked”) was added to the function and then called out so it would appear in the console tab of chrome development tools if it was working properly. To make sure that it was, the start button was clicked and the console tab was checked. The string “it worked” had appeared in the console tab. In addition, the id that had been assigned to this timer showed up in the HTML portion of the elements tab, with the time incrementing at the same rate as the game. The timer also appeared under the main title of the game and began incrementing one second at a time, upon clicking the start button.
 The timer’s clearInterval was also tested to ensure it stopped counting once all the cards had been matched. This was done by using console.log(“it worked”) again for when the condition of (\$(".invisible").length === 12) had been met and by clearing the setInterval that was created prior. Then all the cards were matched in their pairs. On completion, the incrementing time had stopped at the last number it had reached, in both the game and the HTML portion of the elements tab in then chrome development tools.
 
 ### Matching Cards
@@ -348,7 +348,7 @@ In order to locally run this code, this project would have to be cloned from Git
 
 - I received inspiration for this project from the BrandedBrothers card matching game.
   - www.brandedbrothers.com
-- I received inspiration for this project from the following youtube videos:
+- I received inspiration for this project from the following YouTube videos:
   - https://www.youtube.com/watch?v=zEo42QuZPJw&list=LL2enFJYYjL4OCp7Cu37PM2g
   - https://www.youtube.com/watch?v=Eq4bUSWGv1Y&list=LL2enFJYYjL4OCp7Cu37PM2g&index=5&t=858s
   - https://www.youtube.com/watch?v=ZniVgo8U7ek&t=474s
