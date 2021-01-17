@@ -11,6 +11,7 @@
 body {
   background: #0ffa0f;
   height: 100%;
+  cursor: default;
 }
 
 #zoo {
@@ -92,6 +93,7 @@ section.decorativeFlip {
           transform-style: preserve-3d;
   -webkit-transition: 0.6s;
   transition: 0.6s;
+  cursor: pointer;
 }
 
 .front,

@@ -14,7 +14,7 @@ $("document").ready(function () {
       $(this).addClass("selected");
     }
     collectingTwoCards();
-    conditonToMakeEndGameModalAppear();
+    conditionToMakeEndGameModalAppear();
   });
 
   function startGame() {
@@ -65,7 +65,7 @@ $("document").ready(function () {
   }
 
   function countUpTimer() {
-    // countup timer from zero
+    // count up timer from zero
     let timeDuration = 0;
     // rate numbers are counted & by how much they are incremented
     let countingTime = setInterval(function () {
@@ -78,13 +78,13 @@ $("document").ready(function () {
         clearInterval(countingTime);
         // shows current time as high score
         if (localStorage.getItem("fastestTime") === null) {
-          let setItem = localStorage.setItem("fastestTime", timeDuration);
+          localStorage.setItem("fastestTime", timeDuration);
           $("#highScore").html(`High Score: ${timeDuration}`).hide();
         } else {
           // compares then shows lower time as high score
           let getItem = parseInt(localStorage.getItem("fastestTime"));
           let bestTime = Math.min(getItem, timeDuration);
-          let setItem = localStorage.setItem("fastestTime", bestTime);
+          localStorage.setItem("fastestTime", bestTime);
           $("#highScore").html(`High Score: ${bestTime}`).hide();
         }
         $("#highScore").show();
@@ -92,7 +92,7 @@ $("document").ready(function () {
     });
   }
 
-  function conditonToMakeEndGameModalAppear() {
+  function conditionToMakeEndGameModalAppear() {
     if ($(".invisible").length === 12) {
       // shows completed and restart sign
       setTimeout(function () {
