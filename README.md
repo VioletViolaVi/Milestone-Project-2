@@ -22,18 +22,18 @@ This project is about creating a card matching game using cartoon pictures of zo
 
 # Sadie’s Zoo Wireframes
 
-<img src="assets/wireframes/img/1.mobile.PNG" alt="Screenshot of how the game looks on a mobile before starting.">
-<img src="assets/wireframes/img/2.mobile.PNG" alt="Screenshot of how the game looks on a mobile with no card matches.">
-<img src="assets/wireframes/img/3.mobile.PNG" alt="Screenshot of how the game looks on a mobile and with a card match.">
-<img src="assets/wireframes/img/4.mobile.PNG" alt="Screenshot of how the game looks on a mobile once completed, with the user's time spent and a restart button.">
-<img src="assets/wireframes/img/5.tablet.PNG" alt="Screenshot of how the game looks on a tablet before starting.">
-<img src="assets/wireframes/img/6.tablet.PNG" alt="Screenshot of how the game looks on a tablet with no card matches.">
-<img src="assets/wireframes/img/7.tablet.PNG" alt="Screenshot of how the game looks on a tablet with a card match.">
-<img src="assets/wireframes/img/8.tablet.PNG" alt="Screenshot of how the game looks on a tablet once completed, with the user's time spent and a restart button.">
-<img src="assets/wireframes/img/9.desktop.PNG" alt="Screenshot of how the game looks on a desktop before starting..">
-<img src="assets/wireframes/img/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches..">
-<img src="assets/wireframes/img/11.desktop.PNG" alt="Screenshot of how the game looks on a desktop with a card match.">
-<img src="assets/wireframes/img/12.desktop.PNG" alt="Screenshot of how the game looks on a desktop once completed, with the user's time spent and a restart button.">
+<img src="assets/wireframes/1.mobile.PNG" alt="Screenshot of how the game looks on a mobile before starting.">
+<img src="assets/wireframes/2.mobile.PNG" alt="Screenshot of how the game looks on a mobile with no card matches.">
+<img src="assets/wireframes/3.mobile.PNG" alt="Screenshot of how the game looks on a mobile and with a card match.">
+<img src="assets/wireframes/4.mobile.PNG" alt="Screenshot of how the game looks on a mobile once completed, with the user's time spent and a restart button.">
+<img src="assets/wireframes/5.tablet.PNG" alt="Screenshot of how the game looks on a tablet before starting.">
+<img src="assets/wireframes/6.tablet.PNG" alt="Screenshot of how the game looks on a tablet with no card matches.">
+<img src="assets/wireframes/7.tablet.PNG" alt="Screenshot of how the game looks on a tablet with a card match.">
+<img src="assets/wireframes/8.tablet.PNG" alt="Screenshot of how the game looks on a tablet once completed, with the user's time spent and a restart button.">
+<img src="assets/wireframes/9.desktop.PNG" alt="Screenshot of how the game looks on a desktop before starting..">
+<img src="assets/wireframes/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches..">
+<img src="assets/wireframes/11.desktop.PNG" alt="Screenshot of how the game looks on a desktop with a card match.">
+<img src="assets/wireframes/12.desktop.PNG" alt="Screenshot of how the game looks on a desktop once completed, with the user's time spent and a restart button.">
 
 # Wireframe and Final Game Differences
 
