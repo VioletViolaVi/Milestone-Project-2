@@ -1,0 +1,294 @@
+$colours: (
+  "mainBg": rgb(15, 250, 15),
+  "modalBg": rgba(0, 0, 0, 0.527),
+  "borders": 3px solid darkgreen,
+  "startBtnAndCardsBg": greenyellow,
+  "font": brown,
+);
+
+$universal: (
+  "boxSizing": border-box,
+  "padding": 0em,
+  "margin": 0em,
+);
+
+$fontSizes: (
+  "startTile": 20vw,
+  "startPara": 7vw,
+  "titleCompletedHighScore": 15vw,
+  "timerRedoIcon": 10vw,
+);
+
+$fontFamily: "Pangolin", cursive;
+$_100: 100%;
+$_80: 80%;
+$centering: center;
+$hide: hidden;
+
+* {
+  text-align: $centering;
+  font-family: $fontFamily;
+  color: map-get($colours, "font");
+  box-sizing: map-get($universal, "boxSizing");
+  padding: map-get($universal, "padding");
+  margin: map-get($universal, "margin");
+}
+
+body {
+  background: map-get($colours, "mainBg");
+  height: $_100;
+}
+
+#zoo {
+  width: 40%;
+}
+
+/**************************************************************************************** start modal */
+.modalBackground {
+  background-color: map-get($colours, "modalBg");
+  width: $_100;
+  height: $_100;
+  justify-content: $centering;
+  align-items: $centering;
+  display: grid;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+#start {
+  background-color: map-get($colours, "startBtnAndCardsBg");
+  border: map-get($colours, "borders");
+  width: $_100;
+  border-radius: 10px;
+
+  h1 {
+    font-size: map-get($fontSizes, "startTile");
+  }
+
+  p {
+    font-size: map-get($fontSizes, "startPara");
+  }
+}
+
+/**************************************************************************************** titles */
+
+#title,
+#completed,
+#highScore {
+  font-size: map-get($fontSizes, "titleCompletedHighScore");
+}
+
+#timer,
+.fas.fa-redo-alt {
+  font-size: map-get($fontSizes, "timerRedoIcon");
+}
+
+#highScore,
+#completed,
+.fas.fa-redo-alt {
+  margin-top: 20px;
+}
+/**************************************************************************************** cards */
+// styles flips
+section.decorativeFlip {
+  perspective: 1000px;
+}
+
+// grid system for cards and headings
+.cardsContainer {
+  justify-content: $centering;
+  align-content: $centering;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 2px;
+}
+
+// flips whole card
+.wholeCard {
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+
+// styles front and back side of cards
+.front,
+.back {
+  border: map-get($colours, "borders");
+  background-color: map-get($colours, "startBtnAndCardsBg");
+  backface-visibility: $hide;
+  height: 130px;
+  width: 95px;
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin: 1px;
+}
+
+// puts back of card in one place
+.back {
+  position: relative;
+}
+
+// puts front of card on top of back of card
+.front {
+  position: absolute;
+  transform: rotateY(180deg);
+}
+
+// keeps imgs same size as .front,.back{} is styled
+img {
+  height: $_80;
+  width: $_80;
+}
+
+/**************************************************************************************** JavaScript/jQuery */
+// flips cards back and forth
+.flip {
+  transform: rotateY(180deg);
+}
+
+// remove matching cards
+.invisible {
+  visibility: $hide;
+}
+
+/**************************************************************************************** bootstrap breakpoints */
+@media (min-width: 576px) {
+  // styles start sign
+  @mixin startTile {
+    font-size: 15vw;
+  }
+  #start h1 {
+    @include startTile;
+  }
+
+  // styles start para
+  @mixin startPara {
+    font-size: 5vw;
+  }
+  #start p {
+    @include startPara;
+  }
+
+  // styles main heading, completed and high score sign
+  @mixin mainHeadingCompletedHighScoreSign {
+    font-size: 10vw;
+  }
+  #title,
+  #completed,
+  #highScore {
+    @include mainHeadingCompletedHighScoreSign;
+  }
+
+  // styles timer and reset button
+  @mixin stylesTimerResetBtn {
+    font-size: 5vw;
+  }
+  #timer,
+  .fas.fa-redo-alt {
+    @include stylesTimerResetBtn;
+  }
+
+  // grid system for cards
+  @mixin cardGridSystem {
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+  }
+  .cardsContainer {
+    @include cardGridSystem;
+  }
+
+  // styles front and back side of cards
+  @mixin frontBackCards {
+    height: 200px;
+    width: 120px;
+  }
+  .front,
+  .back {
+    @include frontBackCards;
+  }
+}
+
+@media (min-width: 768px) {
+  // styles start sign
+  @mixin startTile {
+    font-size: 13vw;
+  }
+  #start h1 {
+    @include startTile;
+  }
+
+  // styles zoo picture
+  @mixin zooPic {
+    width: 30%;
+  }
+  #zoo {
+    @include zooPic;
+  }
+
+  // styles main heading, completed and high score sign
+  @mixin mainHeadingCompletedHighScoreSign {
+    font-size: 8vw;
+  }
+  #title,
+  #completed,
+  #highScore {
+    @include mainHeadingCompletedHighScoreSign;
+  }
+
+  // styles front and back side of cards
+  @mixin frontBackCards {
+    width: 170px;
+  }
+  .front,
+  .back {
+    @include frontBackCards;
+  }
+}
+
+@media (min-width: 992px) {
+  // styles zoo picture
+  @mixin zooPic {
+    width: 20%;
+  }
+  #zoo {
+    @include zooPic;
+  }
+
+  // styles main heading, completed and high score sign
+  @mixin mainHeadingCompletedHighScoreSign {
+    font-size: 6vw;
+  }
+  #title,
+  #completed,
+  #highScore {
+    @include mainHeadingCompletedHighScoreSign;
+  }
+
+  // styles front and back side of cards
+  @mixin frontBackCards {
+    width: 200px;
+  }
+  .front,
+  .back {
+    @include frontBackCards;
+  }
+}
+
+@media (min-width: 1200px) {
+  // styles zoo picture
+  @mixin zooPic {
+    width: 15%;
+  }
+  #zoo {
+    @include zooPic;
+  }
+
+  // styles front and back side of cards
+  @mixin frontBackCards {
+    width: 230px;
+  }
+  .front,
+  .back {
+    @include frontBackCards;
+  }
+}

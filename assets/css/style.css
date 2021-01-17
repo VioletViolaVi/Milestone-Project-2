@@ -1,236 +1,206 @@
-/********************** sets custom default for all elements */
 * {
-  font-family: "Pangolin", cursive;
-  padding: 0px;
-  margin: 0px;
   text-align: center;
-  box-sizing: border-box;
+  font-family: "Pangolin", cursive;
   color: brown;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0em;
+  margin: 0em;
 }
 
-/********************** prevents imgs from having same bg-colour */
 body {
+  background: #0ffa0f;
   height: 100%;
-  background: rgb(15, 250, 15);
 }
 
-/*------------------------------------------------------------------------- START MODAL -------------------------------------------------------------------------*/
-
-/********************** provides underlay for modal */
-.modalBackground {
-  background-color: rgba(0, 0, 0, 0.527);
-  width: 100%;
-  height: 100%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  position: fixed;
-  z-index: 1;
-}
-
-/********************** styles start button */
-#start {
-  width: 100%;
-  border-radius: 10px;
-  background-color: greenyellow;
-  border: 3px solid darkgreen;
-}
-
-/********************** styles start sign */
-#start h1 {
-  font-size: 20vw;
-}
-
-/********************** styles start para */
-#start p {
-  font-size: 7vw;
-}
-
-/*------------------------------------------------------------------------- TITLES -------------------------------------------------------------------------*/
-
-/********************** styles zoo picture */
 #zoo {
   width: 40%;
 }
 
-/********************** styles main heading, completed and highscore sign*/
+/**************************************************************************************** start modal */
+.modalBackground {
+  background-color: rgba(0, 0, 0, 0.527);
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+#start {
+  background-color: greenyellow;
+  border: 3px solid darkgreen;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#start h1 {
+  font-size: 20vw;
+}
+
+#start p {
+  font-size: 7vw;
+}
+
+/**************************************************************************************** titles */
 #title,
 #completed,
 #highScore {
   font-size: 15vw;
 }
 
-/********************** styles timer and reset button */
 #timer,
 .fas.fa-redo-alt {
   font-size: 10vw;
 }
 
-/********************** spaces out reset button, highscore and completed sign */
 #highScore,
 #completed,
 .fas.fa-redo-alt {
   margin-top: 20px;
 }
-/*------------------------------------------------------------------------- CARDS -------------------------------------------------------------------------*/
 
-/********************** adds style to flip*/
+/**************************************************************************************** cards */
 section.decorativeFlip {
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
-/********************** grid system for cards and headings */
 .cardsContainer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: auto auto auto;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
   grid-gap: 2px;
-  justify-content: center;
-  align-content: center;
 }
 
-/********************** flips whole card */
 .wholeCard {
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 
-/********************** styles front and back side of cards */
 .front,
 .back {
   border: 3px solid darkgreen;
   background-color: greenyellow;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   height: 130px;
   width: 95px;
   border-radius: 5px;
   padding: 10px 5px;
   margin: 1px;
-  backface-visibility: hidden;
 }
 
-/********************** puts back of card in one place */
 .back {
   position: relative;
 }
 
-/********************** puts front of card on top of back of card */
 .front {
   position: absolute;
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
-/********************** keeps imgs same size as .front,.back{} is styled  */
 img {
   height: 80%;
   width: 80%;
 }
 
-/*------------------------------------------------------------------------- JAVASCRIPT/JQUERY -------------------------------------------------------------------------*/
-
-/********************** to flip cards back and forth */
+/**************************************************************************************** JavaScript/jQuery */
 .flip {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
-/********************** to remove matching cards */
 .invisible {
   visibility: hidden;
 }
 
-/*------------------------------------------------------------------------- MEDIA QUERIES -------------------------------------------------------------------------*/
-/* Recommended breakpoints from Bootstrap */
-
-/* small */
+/**************************************************************************************** bootstrap breakpoints */
 @media (min-width: 576px) {
-  /********************** styles start sign */
   #start h1 {
     font-size: 15vw;
   }
-
-  /********************** styles start para */
   #start p {
     font-size: 5vw;
   }
-  /********************** styles main heading, completed and highscore sign*/
   #title,
   #completed,
   #highScore {
     font-size: 10vw;
   }
-
-  /********************** styles timer and reset button */
   #timer,
   .fas.fa-redo-alt {
     font-size: 5vw;
   }
-
-  /********************** grid system for cards */
   .cardsContainer {
-    grid-template-columns: auto auto auto auto;
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
     grid-gap: 5px;
   }
-
-  /********************** styles front and back side of cards */
   .front,
   .back {
     height: 200px;
     width: 120px;
   }
-} /* small end */
+}
 
-/* medium */
 @media (min-width: 768px) {
-  /********************** styles start sign */
   #start h1 {
     font-size: 13vw;
   }
-
-  /********************** styles zoo picture */
   #zoo {
     width: 30%;
   }
-  /********************** styles main heading, completed and highscore sign*/
   #title,
   #completed,
   #highScore {
     font-size: 8vw;
   }
-
-  /********************** styles front and back side of cards */
   .front,
   .back {
     width: 170px;
   }
-} /* medium end */
+}
 
-/* large */
 @media (min-width: 992px) {
-  /********************** styles zoo picture */
   #zoo {
     width: 20%;
   }
-  /********************** styles main heading, completed and highscore sign*/
   #title,
   #completed,
   #highScore {
     font-size: 6vw;
   }
-  /********************** styles front and back side of cards */
   .front,
   .back {
     width: 200px;
   }
-} /* large end */
+}
 
-/* extra large */
 @media (min-width: 1200px) {
-  /********************** styles zoo picture */
   #zoo {
     width: 15%;
   }
-  /********************** styles front and back side of cards */
   .front,
   .back {
     width: 230px;
   }
-} /* extra large end */
+}
+/*# sourceMappingURL=style.css.map */

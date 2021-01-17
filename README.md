@@ -30,8 +30,8 @@ This project is about creating a card matching game using cartoon pictures of zo
 <img src="assets/wireframes/6.tablet.PNG" alt="Screenshot of how the game looks on a tablet with no card matches.">
 <img src="assets/wireframes/7.tablet.PNG" alt="Screenshot of how the game looks on a tablet with a card match.">
 <img src="assets/wireframes/8.tablet.PNG" alt="Screenshot of how the game looks on a tablet once completed, with the user's time spent and a restart button.">
-<img src="assets/wireframes/9.desktop.PNG" alt="Screenshot of how the game looks on a desktop before starting..">
-<img src="assets/wireframes/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches..">
+<img src="assets/wireframes/9.desktop.PNG" alt="Screenshot of how the game looks on a desktop before starting.">
+<img src="assets/wireframes/10.desktop.PNG" alt="Screenshot of how the game looks on a desktop with no card matches.">
 <img src="assets/wireframes/11.desktop.PNG" alt="Screenshot of how the game looks on a desktop with a card match.">
 <img src="assets/wireframes/12.desktop.PNG" alt="Screenshot of how the game looks on a desktop once completed, with the user's time spent and a restart button.">
 
